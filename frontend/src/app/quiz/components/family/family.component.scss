@@ -51,14 +51,5 @@
 }
 
 .assign {
-  border: none;
-  outline: none;
-  width: 65px;
-  height: 65px;
   margin: 10px auto 18px auto;
-  background: url('/assets/icon/comet.normal.svg');
-
-  &:active {
-    background: url('/assets/icon/comet.pressed.svg');
-  }
 }
