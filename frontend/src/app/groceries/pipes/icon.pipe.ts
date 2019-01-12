@@ -5,6 +5,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class IconPipe implements PipeTransform {
   transform(value: any, args?: any): any {
-    return `assets/icon/${value}.png`;
+    return `url(assets/icon/${value}.png)`;
   }
 }

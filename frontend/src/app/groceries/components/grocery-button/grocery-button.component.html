@@ -1,5 +1,10 @@
-<button (click)="increase.emit()">
-  <img class="icon"
-       [src]="icon | icon" />
-  <div *ngIf="counter !== 0">{{counter}}</div>
+<button class="button"
+        (click)="increase.emit()">
+  <div class="icon"
+       [style.backgroundImage]="icon | icon"></div>
+  <div *ngIf="counter !== 0"
+       class="counter">{{counter}}</div>
 </button>
+<button *ngIf="counter !== 0"
+        class="decrease"
+        (click)="decrease.emit()">-</button>

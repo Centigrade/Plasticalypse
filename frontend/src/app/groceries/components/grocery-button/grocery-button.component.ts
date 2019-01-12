@@ -9,4 +9,5 @@ export class GroceryButtonComponent {
   @Input() icon: string;
   @Input() counter: number;
   @Output() increase: EventEmitter<void> = new EventEmitter();
+  @Output() decrease: EventEmitter<void> = new EventEmitter();
 }
