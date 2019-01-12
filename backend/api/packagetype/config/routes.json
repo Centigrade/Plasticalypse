@@ -1,0 +1,76 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/packagetypes",
+      "handler": "Packagetype.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/packagetypes/count",
+      "handler": "Packagetype.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/packagetypes/:id",
+      "handler": "Packagetype.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/packagetypes",
+      "handler": "Packagetype.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/packagetypes/:id",
+      "handler": "Packagetype.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/packagetypes/:id",
+      "handler": "Packagetype.destroy",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/packagetypes/:id/relationships/:relation",
+      "handler": "Packagetype.createRelation",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/packagetypes/:id/relationships/:relation",
+      "handler": "Packagetype.updateRelation",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/packagetypes/:id/relationships/:relation",
+      "handler": "Packagetype.destroyRelation",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
