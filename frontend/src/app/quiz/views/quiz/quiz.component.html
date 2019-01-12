@@ -1,3 +1,14 @@
-<p>
-  quiz works!
-</p>
+<!-- First question. -->
+<pf-family (familyMemberCountChanged)="familyMemberCountAssigned($event)"
+           *ngIf="currentQuestionStep === -1"></pf-family>
+
+<!-- Multiple choice questions come in play after first question. -->
+<ng-container *ngIf="currentQuestionStep > -1 && currentQuestionStep < multipleChoiceQuestions.length">
+  <pf-multiple-choice [question]="multipleChoiceQuestions[currentQuestionStep]"
+                      (answered)="addAnswerScoreToLevelScore($event)"></pf-multiple-choice>
+</ng-container>
+
+<!-- At the end, we show the result to the user. -->
+<ng-container *ngIf="currentQuestionStep >= multipleChoiceQuestions.length">
+  Danke für deine Eingaben. Du bist also ein/e {{ levelDescription }}.
+</ng-container>

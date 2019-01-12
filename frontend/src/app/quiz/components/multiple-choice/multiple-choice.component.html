@@ -4,7 +4,7 @@
   <input type="radio"
          (input)="selectedAnswer = answer"
          [id]="generateId(answer)"
-         name="answers">
+         [name]="question.question">
   <label [for]="generateId(answer)">{{answer.text}}</label>
 </div>
 

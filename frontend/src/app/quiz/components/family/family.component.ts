@@ -10,4 +10,8 @@ export class FamilyComponent {
    * Output for the score
    */
   @Output() familyMemberCountChanged = new EventEmitter<number>();
+
+  public personCountChanged(count: number) {
+    this.familyMemberCountChanged.emit(count);
+  }
 }

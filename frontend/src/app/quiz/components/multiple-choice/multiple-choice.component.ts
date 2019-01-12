@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output } from '@angular/core';
 import { Answer } from '../../types/answer';
 import { Question } from '../../types/question';
 
@@ -7,7 +7,7 @@ import { Question } from '../../types/question';
   templateUrl: './multiple-choice.component.html',
   styleUrls: ['./multiple-choice.component.scss'],
 })
-export class MultipleChoiceComponent {
+export class MultipleChoiceComponent implements OnChanges {
   /**
    * Question will be displayed as question itself and the including answer possibilities.
    */
@@ -20,6 +20,10 @@ export class MultipleChoiceComponent {
 
   // properties
   public selectedAnswer: Answer;
+
+  ngOnChanges() {
+    this.selectedAnswer = undefined;
+  }
 
   //methods
   public confirm() {
