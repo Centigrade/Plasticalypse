@@ -1,0 +1,76 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/appusers",
+      "handler": "Appuser.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/appusers/count",
+      "handler": "Appuser.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/appusers/:id",
+      "handler": "Appuser.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/appusers",
+      "handler": "Appuser.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/appusers/:id",
+      "handler": "Appuser.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/appusers/:id",
+      "handler": "Appuser.destroy",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/appusers/:id/relationships/:relation",
+      "handler": "Appuser.createRelation",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/appusers/:id/relationships/:relation",
+      "handler": "Appuser.updateRelation",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/appusers/:id/relationships/:relation",
+      "handler": "Appuser.destroyRelation",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
