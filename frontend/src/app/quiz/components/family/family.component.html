@@ -1,3 +1,7 @@
-<p>
-  family works!
-</p>
+<h1>Wie viele Sünder seid ihr unter eurem Dach?</h1>
+
+<button class="person"
+        (click)="familyMemberCountChanged.emit(personCount)"
+        *ngFor="let personCount of [1,2,3,4,5]">
+  {{personCount}}
+</button>

@@ -5,7 +5,7 @@ import { Question } from '../../types/question';
 @Component({
   selector: 'pf-multiple-choice',
   templateUrl: './multiple-choice.component.html',
-  styleUrls: ['./multiple-choice.component.css'],
+  styleUrls: ['./multiple-choice.component.scss'],
 })
 export class MultipleChoiceComponent {
   /**
