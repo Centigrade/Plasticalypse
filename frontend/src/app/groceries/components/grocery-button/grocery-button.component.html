@@ -1,0 +1,5 @@
+<button (click)="increase.emit()">
+  <img class="icon"
+       [src]="icon | icon" />
+  <div *ngIf="counter !== 0">{{counter}}</div>
+</button>

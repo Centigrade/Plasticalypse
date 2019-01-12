@@ -1,0 +1,33 @@
+{
+  "connection": "default",
+  "collectionName": "packagetypes",
+  "info": {
+    "name": "packagetype",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "name": {
+      "default": "",
+      "type": "string"
+    },
+    "proportion": {
+      "default": "",
+      "type": "integer"
+    },
+    "plastictype": {
+      "default": "",
+      "type": "enumeration",
+      "enum": [
+        "tetrapack",
+        "box",
+        "foil",
+        "bag"
+      ]
+    }
+  }
+}

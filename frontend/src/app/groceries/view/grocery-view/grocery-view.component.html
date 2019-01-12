@@ -1,0 +1,6 @@
+<pf-grocery-button *ngFor='let grocery of buttons'
+                   [icon]="grocery.icon"
+                   [counter]="grocery.counter"
+                   (increase)="increase(grocery)"></pf-grocery-button>
+<button (click)="undo()">UNDO</button>
+<button (click)="delete()">DELETE</button>
