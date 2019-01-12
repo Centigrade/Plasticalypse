@@ -1,0 +1,20 @@
+{
+  "defaultConnection": "default",
+  "connections": {
+    "default": {
+      "connector": "strapi-hook-bookshelf",
+      "settings": {
+        "client": "mysql",
+        "host": "127.0.0.1",
+        "srv": false,
+        "port": 3306,
+        "database": "plastikfrei",
+        "username": "plastikfrei",
+        "password": "123456"
+      },
+      "options": {
+        "ssl": false
+      }
+    }
+  }
+}
