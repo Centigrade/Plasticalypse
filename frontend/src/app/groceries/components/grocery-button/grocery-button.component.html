@@ -1,7 +1,7 @@
 <button class="button"
         (click)="increase.emit()">
   <div class="icon"
-       [style.backgroundImage]="icon | icon"></div>
+       [style.backgroundImage]="icon | icon:(counter !== 0 ? 'active' : 'normal'):'svg'"></div>
   <div *ngIf="counter !== 0"
        class="counter">{{counter}}</div>
 </button>

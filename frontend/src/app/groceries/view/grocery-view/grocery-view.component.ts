@@ -14,33 +14,33 @@ export class GroceryViewComponent {
 
   public buttons: Grocery[] = [
     {
-      id: 'tetrapak',
-      icon: 'search',
+      id: 'bottle',
+      icon: 'bottle',
       counter: 0,
     },
     {
-      id: 'tetrapak',
-      icon: 'search',
+      id: 'case',
+      icon: 'case',
       counter: 0,
     },
     {
-      id: 'tetrapak',
-      icon: 'search',
+      id: 'cup',
+      icon: 'cup',
       counter: 0,
     },
     {
-      id: 'tetrapak',
-      icon: 'search',
+      id: 'tetra',
+      icon: 'tetra',
       counter: 0,
     },
     {
-      id: 'tetrapak',
-      icon: 'search',
+      id: 'tube',
+      icon: 'tube',
       counter: 0,
     },
     {
-      id: 'tetrapak',
-      icon: 'search',
+      id: 'wrapping',
+      icon: 'wrapping',
       counter: 0,
     },
   ];
