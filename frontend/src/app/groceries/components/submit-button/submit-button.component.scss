@@ -1,9 +1,24 @@
-$button-size: 60px;
+$button-size: 110px;
 
 :host {
   display: block;
   width: $button-size;
   height: $button-size;
+}
+
+.icon {
+  width: 100%;
+  height: 100%;
+  background-image: url('../../../../assets/icon/svg/comet.svg');
+}
+
+.button {
+  width: 100%;
+  height: 100%;
+
+  &:active .icon {
+    background-image: url('../../../../assets/icon/svg/comet.pressed.svg');
+  }
 }
 
 /* TODO: move resetter to global definition */
