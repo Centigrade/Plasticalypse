@@ -3,9 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: '**',
+    path: '',
     redirectTo: 'grocery',
+    pathMatch: 'full',
   },
+  // {
+  //   path: '**',
+  //   redirectTo: 'grocery',
+  // },
 ];
 
 @NgModule({

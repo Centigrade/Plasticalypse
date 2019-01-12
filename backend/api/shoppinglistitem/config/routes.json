@@ -1,0 +1,76 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/shoppinglistitems",
+      "handler": "Shoppinglistitem.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/shoppinglistitems/count",
+      "handler": "Shoppinglistitem.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/shoppinglistitems/:id",
+      "handler": "Shoppinglistitem.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/shoppinglistitems",
+      "handler": "Shoppinglistitem.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/shoppinglistitems/:id",
+      "handler": "Shoppinglistitem.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/shoppinglistitems/:id",
+      "handler": "Shoppinglistitem.destroy",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/shoppinglistitems/:id/relationships/:relation",
+      "handler": "Shoppinglistitem.createRelation",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/shoppinglistitems/:id/relationships/:relation",
+      "handler": "Shoppinglistitem.updateRelation",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/shoppinglistitems/:id/relationships/:relation",
+      "handler": "Shoppinglistitem.destroyRelation",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

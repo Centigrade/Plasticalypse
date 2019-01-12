@@ -19,8 +19,7 @@
       "type": "integer"
     },
     "user": {
-      "model": "user",
-      "plugin": "users-permissions"
+      "model": "appuser"
     }
   }
 }
