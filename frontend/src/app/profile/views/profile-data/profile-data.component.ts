@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'pf-profile-data',
@@ -6,11 +6,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile-data.component.scss'],
 })
 export class ProfileDataComponent implements OnInit {
+  /**
+   * Output for the score
+   */
+  @Output() editProfileExecuted = new EventEmitter<void>();
+
+  //Properties
   public userName: string;
   public familyMemberCount: number;
 
-  constructor() {}
+  public editProfile() {
+    this.editProfileExecuted.emit();
+  }
 
+  //Methods
   ngOnInit() {
     this.generateMockData();
   }
