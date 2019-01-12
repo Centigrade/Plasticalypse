@@ -1,8 +1,6 @@
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
-
+import { IconPipe } from '../../pipes/icon.pipe';
 import { GroceryButtonComponent } from './grocery-button.component';
 
 describe('GroceryButtonComponent', () => {
@@ -11,9 +9,8 @@ describe('GroceryButtonComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GroceryButtonComponent ]
-    })
-    .compileComponents();
+      declarations: [GroceryButtonComponent, IconPipe],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
