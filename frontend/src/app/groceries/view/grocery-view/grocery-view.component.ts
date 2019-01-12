@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Grocery } from '../../types/grocery';
+import { GroceryHistory } from '../../types/grocery-history';
 
 @Component({
   selector: 'pf-grocery-view',
@@ -9,17 +10,37 @@ import { Grocery } from '../../types/grocery';
 export class GroceryViewComponent {
   constructor() {}
 
-  private history: Grocery[] = [];
+  private history: GroceryHistory[] = [];
 
   public buttons: Grocery[] = [
     {
-      id: 'tetrapak',
-      icon: 'search',
+      id: 'bottle',
+      icon: 'bottle',
       counter: 0,
     },
     {
-      id: 'tetrapak',
-      icon: 'search',
+      id: 'case',
+      icon: 'case',
+      counter: 0,
+    },
+    {
+      id: 'cup',
+      icon: 'cup',
+      counter: 0,
+    },
+    {
+      id: 'tetra',
+      icon: 'tetra',
+      counter: 0,
+    },
+    {
+      id: 'tube',
+      icon: 'tube',
+      counter: 0,
+    },
+    {
+      id: 'wrapping',
+      icon: 'wrapping',
       counter: 0,
     },
   ];
@@ -27,14 +48,26 @@ export class GroceryViewComponent {
   public increase(button: Grocery) {
     button.counter++;
 
-    this.history.push(button);
+    this.history.push({ grocery: button, action: 'increase' });
+  }
+
+  public decrease(button: Grocery) {
+    if (button.counter > 0) {
+      button.counter--;
+    }
+
+    this.history.push({ grocery: button, action: 'decrease' });
   }
 
   public undo() {
-    const button = this.history.pop();
+    const historyEntry = this.history.pop();
 
-    if (button !== undefined) {
-      button.counter--;
+    if (historyEntry !== undefined) {
+      if (historyEntry.action === 'increase') {
+        historyEntry.grocery.counter--;
+      } else {
+        historyEntry.grocery.counter++;
+      }
     }
   }
 
