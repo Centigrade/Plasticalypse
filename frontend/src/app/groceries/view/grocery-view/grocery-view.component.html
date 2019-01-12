@@ -7,8 +7,8 @@
                        [alignment]="index % 2 === 0 ? 'left' : 'right'"
                        (increase)="increase(grocery)"
                        (decrease)="decrease(grocery)"></pf-grocery-button>
+    <span *ngIf="!((buttons.length - 1) === index || (buttons.length - 2) === index)"
+          class="seperator"></span>
   </div>
 </div>
-<button (click)="undo()">UNDO</button>
-<button (click)="delete()">DELETE</button>
 <pf-submit-button class="submit"></pf-submit-button>
