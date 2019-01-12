@@ -6,7 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile-data.component.scss'],
 })
 export class ProfileDataComponent implements OnInit {
+  public userName: string;
+
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.userName = 'Aline Bare';
+  }
 }
