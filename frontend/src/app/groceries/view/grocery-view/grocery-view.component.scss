@@ -1,16 +1,69 @@
+$dark-blue: #031441;
+$cyan: #1cdab0;
+
 :host {
   display: block;
   position: relative;
+  background: $dark-blue;
+  height: 100%;
 }
 
 .groceries {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 50% 50%;
 
-  &>* {
-    flex-basis: 50%;
+  $border-padding: 15px;
+
+  .square {
+    position: relative;
+    box-sizing: border-box;
+
+    &:nth-child(odd) {
+      &::after {
+        content: '';
+        position: absolute;
+        top: $border-padding;
+        right: 0;
+        height: calc(100% - #{$border-padding * 2});
+        border-right: 2px solid $cyan;
+      }
+    }
+
+    &:nth-last-of-type(-n + 2) {
+      &::after {
+        content: 't';
+        color: white;
+        // border-bottom: none;
+      }
+    }
+
+    &::before {
+      content: '';
+      display: block;
+      padding-top: 100%;
+    }
+
+    .item {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: $border-padding;
+        bottom: 0;
+        width: calc(100% - #{$border-padding * 2});
+        border-bottom: 2px solid $cyan;
+      }
+    }
   }
+}
+
+button {
+  color: white;
 }
 
 .submit {

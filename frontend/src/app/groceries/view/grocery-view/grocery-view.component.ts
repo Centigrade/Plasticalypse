@@ -52,7 +52,9 @@ export class GroceryViewComponent {
   }
 
   public decrease(button: Grocery) {
-    button.counter--;
+    if (button.counter > 0) {
+      button.counter--;
+    }
 
     this.history.push({ grocery: button, action: 'decrease' });
   }
