@@ -25,4 +25,11 @@ export class MultipleChoiceComponent {
   public confirm() {
     this.answer.emit(this.selectedAnswer.score);
   }
+
+  /**
+   * Generates a unique id for a given answer by concat the question with the answer text.
+   */
+  public generateId(answer: Answer): string {
+    return this.question.question.concat(answer.text);
+  }
 }

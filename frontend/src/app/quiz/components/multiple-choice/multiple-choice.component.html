@@ -1,3 +1,8 @@
-<p>
-  multiple-choice works!
-</p>
+<h1>{{question.question}}</h1>
+
+<div *ngFor="let answer of question.answers">
+  <input type="radio"
+         [id]="generateId(answer)"
+         name="answers">
+  <label [for]="generateId(answer)">{{answer.text}}</label>
+</div>
