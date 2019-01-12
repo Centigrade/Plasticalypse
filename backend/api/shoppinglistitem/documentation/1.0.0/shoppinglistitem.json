@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/packages": {
+    "/shoppinglistitems": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -12,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Package"
+                    "$ref": "#/components/schemas/Shoppinglistitem"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Package"
+          "Shoppinglistitem"
         ],
         "parameters": [
           {
@@ -175,7 +175,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Package"
+                  "$ref": "#/components/schemas/Shoppinglistitem"
                 }
               }
             }
@@ -213,7 +213,7 @@
         },
         "summary": "",
         "tags": [
-          "Package"
+          "Shoppinglistitem"
         ],
         "requestBody": {
           "description": "",
@@ -221,14 +221,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewPackage"
+                "$ref": "#/components/schemas/NewShoppinglistitem"
               }
             }
           }
         }
       }
     },
-    "/packages/count": {
+    "/shoppinglistitems/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -280,12 +280,12 @@
         },
         "summary": "",
         "tags": [
-          "Package"
+          "Shoppinglistitem"
         ],
         "parameters": []
       }
     },
-    "/packages/{id}": {
+    "/shoppinglistitems/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -295,7 +295,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Package"
+                  "$ref": "#/components/schemas/Shoppinglistitem"
                 }
               }
             }
@@ -333,7 +333,7 @@
         },
         "summary": "",
         "tags": [
-          "Package"
+          "Shoppinglistitem"
         ],
         "parameters": [
           {
@@ -357,7 +357,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Package"
+                  "$ref": "#/components/schemas/Shoppinglistitem"
                 }
               }
             }
@@ -395,7 +395,7 @@
         },
         "summary": "",
         "tags": [
-          "Package"
+          "Shoppinglistitem"
         ],
         "requestBody": {
           "description": "",
@@ -403,7 +403,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewPackage"
+                "$ref": "#/components/schemas/NewShoppinglistitem"
               }
             }
           }
@@ -469,7 +469,7 @@
         },
         "summary": "",
         "tags": [
-          "Package"
+          "Shoppinglistitem"
         ],
         "parameters": [
           {
@@ -485,7 +485,7 @@
         ]
       }
     },
-    "/packages/{id}/relationships/{relation}": {
+    "/shoppinglistitems/{id}/relationships/{relation}": {
       "post": {
         "deprecated": false,
         "description": "Create a new record",
@@ -537,7 +537,7 @@
         },
         "summary": "",
         "tags": [
-          "Package"
+          "Shoppinglistitem"
         ],
         "requestBody": {
           "description": "",
@@ -606,7 +606,7 @@
         },
         "summary": "",
         "tags": [
-          "Package"
+          "Shoppinglistitem"
         ],
         "requestBody": {
           "description": "",
@@ -694,7 +694,7 @@
         },
         "summary": "",
         "tags": [
-          "Package"
+          "Shoppinglistitem"
         ],
         "parameters": [
           {
@@ -723,7 +723,7 @@
   },
   "components": {
     "schemas": {
-      "Package": {
+      "Shoppinglistitem": {
         "required": [
           "id"
         ],
@@ -731,30 +731,7 @@
           "id": {
             "type": "string"
           },
-          "packagetype": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "proportion": {
-                "type": "integer"
-              },
-              "plastictype": {
-                "type": "string"
-              }
-            }
-          },
-          "amount": {
-            "type": "integer",
-            "default": ""
-          },
-          "user": {
+          "appuser": {
             "required": [
               "id"
             ],
@@ -772,20 +749,37 @@
                 "type": "integer"
               }
             }
-          }
-        }
-      },
-      "NewPackage": {
-        "properties": {
-          "packagetype": {
-            "type": "string"
           },
-          "amount": {
+          "itemname": {
+            "type": "string",
+            "default": ""
+          },
+          "qty": {
             "type": "integer",
             "default": ""
           },
-          "user": {
+          "status": {
+            "type": "string",
+            "default": "open"
+          }
+        }
+      },
+      "NewShoppinglistitem": {
+        "properties": {
+          "appuser": {
             "type": "string"
+          },
+          "itemname": {
+            "type": "string",
+            "default": ""
+          },
+          "qty": {
+            "type": "integer",
+            "default": ""
+          },
+          "status": {
+            "type": "string",
+            "default": "open"
           }
         }
       }
@@ -793,7 +787,7 @@
   },
   "tags": [
     {
-      "name": "Package"
+      "name": "Shoppinglistitem"
     }
   ]
 }

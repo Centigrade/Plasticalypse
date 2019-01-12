@@ -1,0 +1,30 @@
+{
+  "connection": "default",
+  "collectionName": "shoppinglistitems",
+  "info": {
+    "name": "shoppinglistitem",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "appuser": {
+      "model": "appuser"
+    },
+    "itemname": {
+      "default": "",
+      "type": "string"
+    },
+    "qty": {
+      "default": "",
+      "type": "integer"
+    },
+    "status": {
+      "default": "open",
+      "type": "string"
+    }
+  }
+}

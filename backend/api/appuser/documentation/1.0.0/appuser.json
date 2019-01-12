@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/packages": {
+    "/appusers": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -12,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Package"
+                    "$ref": "#/components/schemas/Appuser"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Package"
+          "Appuser"
         ],
         "parameters": [
           {
@@ -175,7 +175,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Package"
+                  "$ref": "#/components/schemas/Appuser"
                 }
               }
             }
@@ -213,7 +213,7 @@
         },
         "summary": "",
         "tags": [
-          "Package"
+          "Appuser"
         ],
         "requestBody": {
           "description": "",
@@ -221,14 +221,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewPackage"
+                "$ref": "#/components/schemas/NewAppuser"
               }
             }
           }
         }
       }
     },
-    "/packages/count": {
+    "/appusers/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -280,12 +280,12 @@
         },
         "summary": "",
         "tags": [
-          "Package"
+          "Appuser"
         ],
         "parameters": []
       }
     },
-    "/packages/{id}": {
+    "/appusers/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -295,7 +295,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Package"
+                  "$ref": "#/components/schemas/Appuser"
                 }
               }
             }
@@ -333,7 +333,7 @@
         },
         "summary": "",
         "tags": [
-          "Package"
+          "Appuser"
         ],
         "parameters": [
           {
@@ -357,7 +357,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Package"
+                  "$ref": "#/components/schemas/Appuser"
                 }
               }
             }
@@ -395,7 +395,7 @@
         },
         "summary": "",
         "tags": [
-          "Package"
+          "Appuser"
         ],
         "requestBody": {
           "description": "",
@@ -403,7 +403,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewPackage"
+                "$ref": "#/components/schemas/NewAppuser"
               }
             }
           }
@@ -469,7 +469,7 @@
         },
         "summary": "",
         "tags": [
-          "Package"
+          "Appuser"
         ],
         "parameters": [
           {
@@ -485,7 +485,7 @@
         ]
       }
     },
-    "/packages/{id}/relationships/{relation}": {
+    "/appusers/{id}/relationships/{relation}": {
       "post": {
         "deprecated": false,
         "description": "Create a new record",
@@ -537,7 +537,7 @@
         },
         "summary": "",
         "tags": [
-          "Package"
+          "Appuser"
         ],
         "requestBody": {
           "description": "",
@@ -606,7 +606,7 @@
         },
         "summary": "",
         "tags": [
-          "Package"
+          "Appuser"
         ],
         "requestBody": {
           "description": "",
@@ -694,7 +694,7 @@
         },
         "summary": "",
         "tags": [
-          "Package"
+          "Appuser"
         ],
         "parameters": [
           {
@@ -723,7 +723,7 @@
   },
   "components": {
     "schemas": {
-      "Package": {
+      "Appuser": {
         "required": [
           "id"
         ],
@@ -731,61 +731,33 @@
           "id": {
             "type": "string"
           },
-          "packagetype": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "proportion": {
-                "type": "integer"
-              },
-              "plastictype": {
-                "type": "string"
-              }
-            }
-          },
-          "amount": {
-            "type": "integer",
+          "username": {
+            "type": "string",
             "default": ""
           },
-          "user": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "username": {
-                "type": "string"
-              },
-              "password": {
-                "type": "string"
-              },
-              "basevalue": {
-                "type": "integer"
-              }
-            }
+          "password": {
+            "type": "string",
+            "default": ""
+          },
+          "basevalue": {
+            "type": "integer",
+            "default": ""
           }
         }
       },
-      "NewPackage": {
+      "NewAppuser": {
         "properties": {
-          "packagetype": {
-            "type": "string"
-          },
-          "amount": {
-            "type": "integer",
+          "username": {
+            "type": "string",
             "default": ""
           },
-          "user": {
-            "type": "string"
+          "password": {
+            "type": "string",
+            "default": ""
+          },
+          "basevalue": {
+            "type": "integer",
+            "default": ""
           }
         }
       }
@@ -793,7 +765,7 @@
   },
   "tags": [
     {
-      "name": "Package"
+      "name": "Appuser"
     }
   ]
 }
