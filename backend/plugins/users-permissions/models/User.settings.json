@@ -48,6 +48,11 @@
       "via": "users",
       "plugin": "users-permissions",
       "configurable": false
+    },
+    "basevalue": {
+      "default": "",
+      "type": "integer"
     }
-  }
+  },
+  "collectionName": "users-permissions_user"
 }
