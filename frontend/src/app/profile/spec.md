@@ -2,5 +2,5 @@
 
 Name
 Haushalt
-Einstufung
-Basiswert
+Einstufung (durch Score wird Einstufung ermittelt)
+Basiswert (Macht Backand, Berechnung was eingespart werden muss)
