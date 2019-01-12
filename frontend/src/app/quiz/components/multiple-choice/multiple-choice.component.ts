@@ -16,14 +16,14 @@ export class MultipleChoiceComponent {
   /**
    * Occured if the answered the question. The score of the selected answer will be emitted.
    */
-  @Output() answer = new EventEmitter<number>();
+  @Output() answered = new EventEmitter<number>();
 
   // properties
   public selectedAnswer: Answer;
 
   //methods
   public confirm() {
-    this.answer.emit(this.selectedAnswer.score);
+    this.answered.emit(this.selectedAnswer.score);
   }
 
   /**
