@@ -1,0 +1,9 @@
+{
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": true
+  },
+  "prettier.requireConfig": true,
+  "versionlens.showVersionLensesAtStartup": false,
+  "git.ignoreLimitWarning": true
+}
