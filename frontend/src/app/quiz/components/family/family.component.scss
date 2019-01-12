@@ -1,5 +1,35 @@
+@import '../../../../styles/index';
+
+:host {
+  display: flex;
+  flex-direction: column;
+}
+
+.question-icon {
+  width: 191px;
+  height: 182px;
+  margin: 95px auto 56px auto;
+}
+
+.question {
+  // font-family: $miri
+}
+
 .person {
   border: 1px solid blue;
   border-radius: 50%;
   margin: 10px;
+}
+
+.assign {
+  border: none;
+  outline: none;
+  width: 65px;
+  height: 65px;
+  margin: 60px auto 18px auto;
+  background: url('/assets/icon/comet.normal.svg');
+
+  &:active {
+    background: url('/assets/icon/comet.pressed.svg');
+  }
 }
