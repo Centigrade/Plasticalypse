@@ -1,11 +1,22 @@
-<h1>{{question.question}}</h1>
+<h1 class="question">{{ question.question }}</h1>
 
-<div *ngFor="let answer of question.answers">
-  <input type="radio"
-         (input)="selectedAnswer = answer"
-         [id]="generateId(answer)"
-         [name]="question.question">
-  <label [for]="generateId(answer)">{{answer.text}}</label>
+<div class="answers">
+  <div class="answer"
+       *ngFor="let answer of question.answers">
+    <div class="upper-line">
+      <div class="line"></div>
+      <div class="circle"></div>
+    </div>
+    <input type="radio"
+           (input)="selectedAnswer = answer"
+           [id]="generateId(answer)"
+           [name]="question.question">
+    <label [for]="generateId(answer)">{{answer.text}}</label>
+    <div class="lower-line">
+      <div class="circle"></div>
+      <div class="line"></div>
+    </div>
+  </div>
 </div>
 
 <button (click)="confirm()"

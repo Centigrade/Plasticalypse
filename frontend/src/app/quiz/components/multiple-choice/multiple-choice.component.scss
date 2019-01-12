@@ -1,0 +1,47 @@
+@import '../../../../styles/index';
+
+:host {
+  display: flex;
+  flex-direction: column;
+}
+
+.question {
+  font-size: 20px;
+  text-align: center;
+  margin: auto 50px;
+}
+
+.answers {
+  width: 285px;
+  margin: auto;
+}
+
+.line {
+  width: 100%;
+  border-top: 1px solid $foreground;
+}
+
+.circle {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1px solid $foreground;
+}
+
+.upper-line {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.lower-line {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.answer {
+  &:nth-child(even) .upper-line {
+    transform: scaleX(-1);
+  }
+}
