@@ -1,20 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { QuizComponent } from './views/quiz/quiz.component';
 
 const routes: Routes = [
   {
-    path: '',
-    redirectTo: 'grocery',
+    path: 'quiz',
+    component: QuizComponent,
     pathMatch: 'full',
   },
-  // {
-  //   path: '**',
-  //   redirectTo: 'grocery',
-  // },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { useHash: true })],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class QuizRoutingModule {}

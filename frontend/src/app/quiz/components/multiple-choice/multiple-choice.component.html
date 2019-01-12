@@ -1,0 +1,12 @@
+<h1>{{question.question}}</h1>
+
+<div *ngFor="let answer of question.answers">
+  <input type="radio"
+         (input)="selectedAnswer = answer"
+         [id]="generateId(answer)"
+         [name]="question.question">
+  <label [for]="generateId(answer)">{{answer.text}}</label>
+</div>
+
+<button (click)="confirm()"
+        [disabled]="selectedAnswer === undefined">speichern</button>
