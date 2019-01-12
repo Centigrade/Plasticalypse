@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { MultipleChoiceComponent } from './multiple-choice.component';
 
 describe('MultipleChoiceComponent', () => {
@@ -8,9 +7,8 @@ describe('MultipleChoiceComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MultipleChoiceComponent ]
-    })
-    .compileComponents();
+      declarations: [MultipleChoiceComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
