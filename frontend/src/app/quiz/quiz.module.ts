@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { QuizComponent } from './views/quiz/quiz.component';
 import { FamilyComponent } from './components/family/family.component';
 import { MultipleChoiceComponent } from './components/multiple-choice/multiple-choice.component';
+import { QuizRoutingModule } from './quiz-routing.module';
+import { QuizComponent } from './views/quiz/quiz.component';
 
 @NgModule({
   declarations: [QuizComponent, FamilyComponent, MultipleChoiceComponent],
-  imports: [CommonModule],
+  imports: [CommonModule, QuizRoutingModule],
 })
 export class QuizModule {}
