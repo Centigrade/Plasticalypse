@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'pf-family-members-count',
@@ -6,6 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./family-members-count.component.scss'],
 })
 export class FamilyMembersCountComponent implements OnInit {
+  /**
+   * The number of the family members.
+   */
+  @Input() familyMembersCount: number;
+
   constructor() {}
 
   ngOnInit() {}
