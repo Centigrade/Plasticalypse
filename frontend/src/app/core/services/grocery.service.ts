@@ -17,10 +17,12 @@ export class GroceryService {
   }
 
   public addGroceries(groceries: Grocery[]): Observable<any> {
-    groceries.map(grocery => (grocery.buyDate = new Date()));
+    const addGroceries: any = { date: new Date() };
+
+    groceries.forEach(grocery => (addGroceries[grocery.id] = grocery.counter));
 
     const url = `${BASE_API_URL}/${ADD_GROCERIES}`;
 
-    return this.http.post(url, groceries);
+    return this.http.post(url, addGroceries);
   }
 }

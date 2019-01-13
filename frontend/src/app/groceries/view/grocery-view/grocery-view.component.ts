@@ -10,13 +10,11 @@ import { GroceryHistory } from '../../types/grocery-history';
   styleUrls: ['./grocery-view.component.scss'],
 })
 export class GroceryViewComponent {
-  constructor(private groceryService: GroceryService, private router: Router) {
+  constructor(private router: Router, private groceryService: GroceryService) {
     this.groceryService.getGroceryOptions().subscribe((groceries: Grocery[]) => {
       groceries.map(grocery => (grocery.counter = 0));
 
       this.groceries = groceries;
-
-      console.log(this.groceries);
     });
   }
 
@@ -64,6 +62,9 @@ export class GroceryViewComponent {
   }
 
   public evaluateSavings() {
-    this.router.navigate(['evaluation']);
+    this.groceryService.addGroceries(this.groceries).subscribe(() => {
+      console.log('Result');
+      this.router.navigate(['/evaluation']);
+    });
   }
 }

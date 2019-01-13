@@ -10,7 +10,6 @@ export class SavingsComponent implements OnInit {
   public title: string;
 
   @Input() savingAmount: number;
-  @Input() batchIcon: ImageBitmap;
 
   constructor() {}
 
