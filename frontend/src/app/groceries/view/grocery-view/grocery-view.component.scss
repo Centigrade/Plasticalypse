@@ -7,6 +7,13 @@
   height: 100%;
 }
 
+.info-bar {
+  height: $navigation-bar-height;
+  color: $foreground;
+  font-size: 50px;
+  font-family: $font-miriam-libre-bold;
+}
+
 .groceries {
   display: grid;
   grid-template-columns: 50% 50%;

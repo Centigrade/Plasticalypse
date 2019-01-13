@@ -5,8 +5,9 @@
   position: relative;
 }
 
-
 .button {
+  @include reset_button();
+
   display: inline-flex;
   position: relative;
   justify-content: center;
@@ -42,6 +43,8 @@
 $decrease-size: 50px;
 
 .decrease {
+  @include reset-button();
+
   display: flex;
   width: $decrease-size;
   height: $decrease-size;
@@ -59,29 +62,4 @@ $decrease-size: 50px;
     background: $foreground;
     border-radius: 2, 5px;
   }
-}
-
-/* TODO: move resetter to global definition */
-button {
-  border: none;
-  margin: 0;
-  padding: 0;
-  width: auto;
-  overflow: visible;
-  background: transparent;
-  outline: none;
-
-  /* inherit font & color from ancestor */
-  color: inherit;
-  font: inherit;
-
-  /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
-  line-height: normal;
-
-  /* Corrects font smoothing for webkit */
-  -webkit-font-smoothing: inherit;
-  -moz-osx-font-smoothing: inherit;
-
-  /* Corrects inability to style clickable `input` types in iOS */
-  -webkit-appearance: none;
 }
