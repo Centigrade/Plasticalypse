@@ -23,9 +23,17 @@ export class CleanessImageComponent {
     setTimeout(() => func(55), 3000);
     setTimeout(() => func(65), 4000);
     setTimeout(() => func(75), 5000);
+    setTimeout(() => func(100), 5000);
   }
 
   public clipPath(percentage: number) {
-    return this.sanitizer.bypassSecurityTrustStyle(`clip-path: inset(0 0 0 ${100 - percentage}%);`);
+    return this.sanitizer.bypassSecurityTrustStyle(
+      `
+      clip-path: inset(0 0 0 ${100 - percentage + 1}vw);
+      -webkit-clip-path: inset(0 0 0 ${100 - percentage + 1}vw);
+      mask-position: ${100 - percentage}vw 0;
+      -webkit-mask-position: ${100 - percentage}vw 0;
+      `,
+    );
   }
 }
