@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
-import { BASE_API_URL, PROFILE_UPDATE_ROUTE } from '../types/api';
+import { Observable } from 'rxjs';
+import { BASE_API_URL, PROFILE_UPDATE_ROUTE, USERDATA_ROUTE } from '../types/api';
+import { UserData } from './../../shared/types/user-data';
 import { UserLevel } from './../../shared/types/user-level';
 import { PfHttpService } from './pf-http.service';
 
@@ -23,5 +25,13 @@ export class ProfileService {
 
     // send the data to the given API_URL
     this.http.post(url, body).subscribe();
+  }
+
+  /**
+   * Gets the profile data from the backend.
+   */
+  public getProfileData(): Observable<UserData> {
+    const url = `${BASE_API_URL}/${USERDATA_ROUTE}`;
+    return this.http.get<UserData>(url);
   }
 }

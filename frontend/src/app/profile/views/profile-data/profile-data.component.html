@@ -1,0 +1,14 @@
+<ng-container *ngIf="user$|async as user">
+
+  <pf-family-members-count [familyMembersCount]="user.family_size"
+                           [familyName]="user.email.split('@')[0]"></pf-family-members-count>
+
+  <pf-expander [title]="getUserLevelTitle(user.level)">
+    {{getUserLevelDescription(user.level)}}
+  </pf-expander>
+
+  <pf-savings [savingAmount]="user.savings"></pf-savings>
+
+  <button class="edit-profile"
+          (click)="editProfile()">Profil anpassen</button>
+</ng-container>
