@@ -1,0 +1,151 @@
+@import '../../../../styles/index';
+
+:host {
+  display: flex;
+  height: 200px;
+  width: 160px;
+  position: relative;
+}
+
+.mark {
+  color: $foreground-highlight;
+  font-weight: normal;
+  position: absolute;
+
+  &.small {
+    top: 5%;
+    left: 30%;
+    font-size: 50px;
+    animation: fading 2s linear infinite;
+  }
+
+  &.medium {
+    font-size: 70px;
+    bottom: 5%;
+    left: 15%;
+    animation: shrinking-some 2s linear infinite;
+  }
+
+  &.large {
+    font-size: 110px;
+    left: 50%;
+    top: 7%;
+    animation: shaking 2s linear infinite;
+  }
+}
+
+.plus {
+  background-image: url(../../../../assets/icon/svg/stern.plus.svg);
+  position: absolute;
+
+  &.left {
+    width: 12px;
+    height: 12px;
+    top: 40%;
+    left: 10%;
+    animation: shrinking 1s linear infinite;
+  }
+
+  &.right {
+    width: 9px;
+    height: 9px;
+    right: 15%;
+    top: 55%;
+    animation: fading 1s linear infinite;
+  }
+}
+
+.circle {
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  background-image: url(../../../../assets/icon/svg/stern.kreis.svg);
+  top: 50%;
+  left: 40%;
+  animation: fading 2s linear infinite;
+}
+
+.cross {
+  width: 7px;
+  height: 7px;
+  background-image: url(../../../../assets/icon/svg/stern.kreuz.svg);
+  position: absolute;
+
+  &.upper {
+    top: 0;
+    left: 60%;
+    animation: shrinking 3s linear infinite;
+  }
+
+  &.lower {
+    bottom: 15%;
+    left: 55%;
+    animation: rotating 3s linear infinite;
+  }
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes shrinking {
+  0% {
+    transform: scale(0.75);
+  }
+
+  50% {
+    transform: scale(1.25);
+  }
+
+  100% {
+    transform: scale(0.75);
+  }
+}
+
+@keyframes shrinking-some {
+  0% {
+    transform: scale(0.9);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(0.9);
+  }
+}
+
+@keyframes fading {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes shaking {
+  0% {
+    transform: rotate(-10deg);
+  }
+
+  50% {
+    transform: rotate(10deg);
+  }
+
+  100% {
+    transform: rotate(-10deg);
+  }
+}
