@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class MenuService {
+  public canOpenMenu = false;
   public isMenuOpen = false;
 
   public openMenu() {

@@ -26,7 +26,21 @@ $overlay-index: 10;
   }
 }
 
-.profile {
+.menu-button {
+  border: none;
+  outline: none;
+  background: none;
+  height: 30px;
+  width: 30px;
+  background-image: url(../assets/icon/svg/burger.svg);
+  margin: 15px;
+
+  &:active {
+    background-image: url(../assets/icon/svg/burger.pressed.svg);
+  }
+}
+
+.profile-container {
   position: absolute;
   top: $menubar-height;
   display: flex;
@@ -37,4 +51,8 @@ $overlay-index: 10;
   height: calc(100% - 50px);
   background: $background;
   z-index: $overlay-index;
+}
+
+.profile {
+  flex-grow: 1;
 }

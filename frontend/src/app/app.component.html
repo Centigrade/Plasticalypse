@@ -1,12 +1,13 @@
 <div class="menubar"
      [class.menu-opened]="menuService.isMenuOpen">
-  <button (click)="menuService.toggleMenu()">🍔</button>
+  <button (click)="menuService.toggleMenu()"
+          *ngIf="menuService.canOpenMenu"
+          class="menu-button"></button>
 </div>
 
-<div class="profile"
-     *ngIf="menuService.isMenuOpen"
-     class="profile">
-  <pf-profile-data></pf-profile-data>
+<div *ngIf="menuService.isMenuOpen"
+     class="profile-container">
+  <pf-profile-data class="profile"></pf-profile-data>
 </div>
 
 <router-outlet></router-outlet>
