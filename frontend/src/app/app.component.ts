@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MenuService } from './core/services/menu.service';
 
 @Component({
   selector: 'pf-root',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  public menuOpened = false;
+  constructor(public menuService: MenuService) {}
 }

@@ -1,9 +1,9 @@
 <div class="menubar"
-     [class.menu-opened]="menuOpened">
-  <button (click)="menuOpened = !menuOpened">🍔</button>
+     [class.menu-opened]="menuService.isMenuOpen">
+  <button (click)="menuService.toggleMenu()">🍔</button>
 </div>
 
-<div *ngIf="menuOpened"
+<div *ngIf="menuService.isMenuOpen"
      class="profile">Profile</div>
 
 <router-outlet></router-outlet>

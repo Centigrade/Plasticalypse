@@ -18,10 +18,10 @@ export class LoginComponent {
 
       // Check whether you are here for the first time?
       // then
-      this.router.navigate(['/quiz']);
+      // this.router.navigate(['/quiz']);
 
       // otherwise
-      // this.router.navigate(['/grocery']);
+      this.router.navigate(['/grocery']);
     });
   }
 
