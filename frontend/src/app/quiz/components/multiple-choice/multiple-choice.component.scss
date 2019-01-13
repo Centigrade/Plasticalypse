@@ -16,9 +16,19 @@
   margin: auto;
 }
 
+.answer-text {
+  &.selected {
+    color: $foreground-highlight;
+  }
+}
+
 .line {
   width: 100%;
   border-top: 1px solid $foreground;
+
+  .selected & {
+    border-color: $foreground-highlight;
+  }
 }
 
 .circle {
@@ -26,22 +36,32 @@
   height: 8px;
   border-radius: 50%;
   border: 1px solid $foreground;
+
+  .selected & {
+    border-color: $foreground-highlight;
+  }
 }
 
-.upper-line {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.lower-line {
+.line-container {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
 .answer {
-  &:nth-child(even) .upper-line {
+  &:nth-child(odd) {
+    z-index: 5;
+  }
+
+  &:first-child .lower {
+    display: none;
+  }
+
+  &:last-child .upper {
+    display: none;
+  }
+
+  &:nth-child(even) .line-container {
     transform: scaleX(-1);
   }
 }

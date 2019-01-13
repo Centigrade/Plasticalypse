@@ -3,7 +3,8 @@
 <div class="answers">
   <div class="answer"
        *ngFor="let answer of question.answers">
-    <div class="upper-line">
+    <div class="line-container upper"
+         [class.selected]="selectedAnswer === answer">
       <div class="line"></div>
       <div class="circle"></div>
     </div>
@@ -11,8 +12,11 @@
            (input)="selectedAnswer = answer"
            [id]="generateId(answer)"
            [name]="question.question">
-    <label [for]="generateId(answer)">{{answer.text}}</label>
-    <div class="lower-line">
+    <label class="answer-text"
+           [class.selected]="selectedAnswer === answer"
+           [for]="generateId(answer)">{{answer.text}}</label>
+    <div class="line-container lower"
+         [class.selected]="selectedAnswer === answer">
       <div class="circle"></div>
       <div class="line"></div>
     </div>
