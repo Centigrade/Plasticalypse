@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { UserLevel } from 'src/app/shared/types/user-level';
 import { Answer } from '../../types/answer';
 import { Question } from '../../types/question';
+import { ProfileService } from './../../../core/services/profile.service';
 
 const SCORE_FOR_HARDLINER = 4;
 const SCORE_FOR_MODERATE = 2;
@@ -29,17 +32,19 @@ export class QuizComponent implements OnInit {
    */
   public currentQuestionStep = -1;
 
-  public get levelDescription(): string {
+  public get calculatedUserLevel(): UserLevel {
     if (this.levelScore <= SCORE_LIMIT_BEGINNER) {
-      return 'Beginner/in';
+      return UserLevel.Beginner;
     }
 
     if (this.levelScore >= SCORE_LIMIT_HARDLINER) {
-      return 'Hardliner/in';
+      return UserLevel.Hardliner;
     }
 
-    return 'Moderater/e';
+    return UserLevel.Moderate;
   }
+
+  constructor(private readonly profileService: ProfileService, private readonly router: Router) {}
 
   ngOnInit() {
     this.buildQuestions();
@@ -47,14 +52,25 @@ export class QuizComponent implements OnInit {
 
   public addAnswerScoreToLevelScore(score: number) {
     this.levelScore += score;
-    console.log(`Current level score: ${this.levelScore}.`);
-    this.currentQuestionStep++;
+    this.proceedToNextQuestion();
   }
 
   public familyMemberCountAssigned(familyMemberCount: number) {
     this.familyMemberCount = familyMemberCount;
-    console.log(`User assigned the number of family members: ${this.familyMemberCount}.`);
+    this.proceedToNextQuestion();
+  }
+
+  private proceedToNextQuestion() {
     this.currentQuestionStep++;
+
+    if (this.isLastQuestionStep()) {
+      this.profileService.updateProfile(this.familyMemberCount, this.calculatedUserLevel);
+      this.router.navigate(['/profile']);
+    }
+  }
+
+  private isLastQuestionStep() {
+    return this.currentQuestionStep >= this.multipleChoiceQuestions.length;
   }
 
   private buildQuestions() {
