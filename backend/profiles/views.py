@@ -1,3 +1,4 @@
+import datetime
 import json
 
 import django.contrib.auth
@@ -5,14 +6,43 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.shortcuts import redirect
 from django.views.decorators.csrf import ensure_csrf_cookie
-from django.views.decorators.http import require_http_methods, require_POST
+from django.views.decorators.http import (require_GET, require_http_methods,
+                                          require_POST)
 
-from plastic_free.http import JSONResponse, JSONResponseForbidden
+from plastic_free.http import (JSONResponse, JSONResponseForbidden,
+                               JSONResponseRaw)
 from profiles.models import Profile
 
 
+@require_GET
+@login_required
+def get_profile(request):
+    # return user profile
+    user = request.user
+    d = {}
+    d["email"] = user.email
+    d["level"] = "Unbekannt ({}g)".format(user.profile.level)
+    for (k, v) in Profile.levels.items():
+        if v == user.profile.level:
+            d["level"] = k
+            break
+    # compute how long the user has been active
+    user_purchases = user.purchases.order_by("date")
+    if user_purchases.exists():
+        registered_secs = (datetime.date.today() -
+                           user_purchases[0].date).total_seconds()
+    else:
+        registered_secs = 1
+    allowed = round(registered_secs / 3600 / 24 / 30) * user.profile.level
+    consumed = 0
+    for purchase in user_purchases:
+        consumed += purchase.aggregate()
+    d["savings"] = allowed - consumed
+    d["family_size"] = user.profile.family_size
+    return JSONResponseRaw(d)
+
+
 @require_http_methods(["GET", "POST"])
-# @ensure_csrf_cookie
 def login(request):
     # redirect users to homepage
     if request.method == "GET":
@@ -46,7 +76,6 @@ def login(request):
 
 
 @require_POST
-# @ensure_csrf_cookie
 def register(request):
     """
     Register a new user
@@ -58,11 +87,17 @@ def register(request):
             userdata["email"], userdata["email"], userdata["password"]
         )
     except Exception as e:
+        print("    Can't create user: {} {}".format(repr(e), str(e)))
         return JSONResponseForbidden(message="Kann den Benutzer nicht anlegen: {}".format(str(e)))
+    user.save()
+    profile = Profile(user=user)
+    profile.save()
+    django.contrib.auth.login(request, user)
     return JSONResponse(logged_in=True)
 
 
 @login_required
+@require_POST
 def update(request):
     """
     Update the profile with new information
@@ -72,10 +107,7 @@ def update(request):
         userdata = json.loads(request.body.decode())
     except Exception as e:
         return JSONResponseForbidden(message="Ungültige Daten angegeben")
-    try:
-        profile = request.user.profile
-    except Profile.DoesNotExist:
-        profile = Profile.objects.create(user=request.user)
+    profile = request.user.profile
     if "level" in userdata:
         try:
             profile.level = Profile.levels[userdata["level"]]

@@ -14,9 +14,11 @@ export class PointGraphComponent implements OnChanges {
   @Input() startDate: Date;
   @Input() endDate: Date;
   @Input() percentage: number;
+  @Input() saved: number = 0;
   @Output() startDateChange: EventEmitter<Date> = new EventEmitter();
   @Output() endDateChange: EventEmitter<Date> = new EventEmitter();
   @Output() percentageChange: EventEmitter<number> = new EventEmitter();
+  @Output() savedChange: EventEmitter<number> = new EventEmitter();
 
   public minAmount: number = 30;
   public maxAmount: number = 500;
@@ -43,17 +45,21 @@ export class PointGraphComponent implements OnChanges {
     const amount = this.shownDatePoints.map(date => date.amount);
 
     if (amount && amount.length > 0) {
+      const maxValue = 1000;
+      // const maxSaved = 3750
       const totalAmount = amount.reduce((prev, curr) => prev + curr);
 
-      // this.percentage = totalAmount / 3750;
-      this.percentage = (totalAmount / 1000) * 100;
-
-      console.log(this.percentage);
+      this.saved = Math.max(0, maxValue - totalAmount);
+      this.percentage = (totalAmount / maxValue) * 100;
     } else {
+      this.saved = 0;
       this.percentage = 0;
     }
 
-    setTimeout(() => this.percentageChange.emit(this.percentage), 500);
+    setTimeout(() => {
+      this.percentageChange.emit(this.percentage);
+      this.savedChange.emit(this.saved);
+    }, 500);
   }
 
   public caluclateLeft(index: number) {

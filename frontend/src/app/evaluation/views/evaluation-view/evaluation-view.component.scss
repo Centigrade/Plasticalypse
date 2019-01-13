@@ -1,5 +1,8 @@
+@import '../../../../styles/index.scss';
+
 :host {
   display: block;
+  position: relative;
   height: 100%;
 }
 
@@ -8,6 +11,14 @@ $date-height: 22px;
 
 .image {
   height: calc(100% - #{$date-height} - #{$bar-height});
+}
+
+.saved {
+  position: absolute;
+  font-family: $font-miriam-libre-bold;
+  font-size: 30px;
+  top: 50%;
+  right: 0;
 }
 
 .evaluation {
