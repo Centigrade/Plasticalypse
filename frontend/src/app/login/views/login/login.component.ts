@@ -15,7 +15,13 @@ export class LoginComponent {
     console.log('Register now!', email, password);
     this.authService.login(email, password).subscribe(result => {
       console.log('Logged in', result);
+
+      // Check whether you are here for the first time?
+      // then
       this.router.navigate(['/quiz']);
+
+      // otherwise
+      // this.router.navigate(['/grocery']);
     });
   }
 
