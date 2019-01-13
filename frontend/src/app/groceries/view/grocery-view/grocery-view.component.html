@@ -1,6 +1,14 @@
-<pf-grocery-button *ngFor='let grocery of buttons'
-                   [icon]="grocery.icon"
-                   [counter]="grocery.counter"
-                   (increase)="increase(grocery)"></pf-grocery-button>
-<button (click)="undo()">UNDO</button>
-<button (click)="delete()">DELETE</button>
+<div class="groceries">
+  <div class="square"
+       *ngFor='let grocery of buttons; let index = index'>
+    <pf-grocery-button class="item"
+                       [icon]="grocery.icon"
+                       [counter]="grocery.counter"
+                       [alignment]="index % 2 === 0 ? 'left' : 'right'"
+                       (increase)="increase(grocery)"
+                       (decrease)="decrease(grocery)"></pf-grocery-button>
+    <span *ngIf="!((buttons.length - 1) === index || (buttons.length - 2) === index)"
+          class="seperator"></span>
+  </div>
+</div>
+<pf-submit-button class="submit"></pf-submit-button>

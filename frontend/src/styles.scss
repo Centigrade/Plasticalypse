@@ -1,1 +1,22 @@
+@import './styles/index';
+
 /* You can add global styles to this file, and also import other style files */
+html,
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: $font-family-standard;
+  font-weight: bold;
+  color: $foreground;
+}
+
+@font-face {
+  font-family: 'MiriamLibre';
+  src: url('assets/font/MiriamLibre-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'PatuaOne';
+  src: url('assets/font/PatuaOne-Regular.ttf') format('truetype');
+}
