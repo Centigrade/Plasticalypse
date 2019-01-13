@@ -2,13 +2,15 @@
   <label for="email"> 📧 </label>
   <input id="email"
          type="email"
+         #email
          placeholder="valentina.braucher@plastik.no">
 </div>
 <div class="field">
   <label for="password"> 🔑 </label>
   <input id="password"
+         #password
          type="password">
 </div>
 
 <pf-submit-button class="register"
-                  (click)="register()">Register new user!</pf-submit-button>
+                  (click)="register(email.value, password.value)">Register new user!</pf-submit-button>
