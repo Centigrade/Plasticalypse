@@ -1,3 +1,5 @@
+@import '../../../../styles/index';
+
 :host {
   margin: 20px 0 0 0;
   display: block;
@@ -14,4 +16,17 @@
 
 .edit-profile {
   background: gray;
+}
+
+.start {
+  color: $background;
+  background: $foreground-highlight;
+  border-radius: 25px;
+  outline: none;
+  border: none;
+  width: 144px;
+  height: 51px;
+  font-family: $font-family-standard;
+  font-size: 20px;
+  font-weight: bold;
 }

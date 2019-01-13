@@ -5,6 +5,7 @@ import { AuthService } from './services/auth.service';
 import { MenuService } from './services/menu.service';
 import { PfHttpService } from './services/pf-http.service';
 import { ProfileService } from './services/profile.service';
+import { ProfileServiceMock } from './services/profile.service.mock';
 
 @NgModule({
   imports: [CommonModule, HttpClientModule],
@@ -12,7 +13,7 @@ import { ProfileService } from './services/profile.service';
     PfHttpService,
     {
       provide: ProfileService,
-      useClass: ProfileService,
+      useClass: ProfileServiceMock,
     },
     AuthService,
     MenuService,
