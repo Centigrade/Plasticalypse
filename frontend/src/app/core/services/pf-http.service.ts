@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 const GENERAL_HTTP_OPTIONS = { withCredentials: true };
 
@@ -9,10 +10,10 @@ const GENERAL_HTTP_OPTIONS = { withCredentials: true };
 export class PfHttpService {
   constructor(private http: HttpClient) {}
 
-  public get<T>(url: string, options: any = {}) {
+  public get(url: string, options: any = {}): Observable<any> {
     options = Object.assign(options, GENERAL_HTTP_OPTIONS);
 
-    return this.http.get<T>(url, options);
+    return this.http.get(url, options);
   }
 
   public post(url: string, body: any, options: any = {}) {

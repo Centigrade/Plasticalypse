@@ -32,6 +32,6 @@ export class ProfileService {
    */
   public getProfileData(): Observable<UserData> {
     const url = `${BASE_API_URL}/${USERDATA_ROUTE}`;
-    return this.http.get<UserData>(url);
+    return this.http.get(url);
   }
 }
