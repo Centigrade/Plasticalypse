@@ -20,6 +20,10 @@ export class ProfileDataComponent implements OnInit {
     this.menuService.closeMenu();
   }
 
+  public start() {
+    this.menuService.closeMenu();
+  }
+
   constructor(
     private profileService: ProfileService,
     private router: Router,
