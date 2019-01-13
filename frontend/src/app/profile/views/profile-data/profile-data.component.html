@@ -4,9 +4,11 @@
 
 <pf-family-members-count [familyMembersCount]="familyMemberCount"></pf-family-members-count>
 
-<pf-expander></pf-expander>
+<pf-expander [title]="userLevel">
+  {{userLevelDescription}}
+</pf-expander>
 
-<pf-savings></pf-savings>
+<pf-savings [savingAmount]="savingAmount"></pf-savings>
 
-<button class="BottomButton"
+<button class="edit-profile"
         (click)="editProfile()">Profil anpassen</button>

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'pf-profile-data',
@@ -6,17 +6,15 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   styleUrls: ['./profile-data.component.scss'],
 })
 export class ProfileDataComponent implements OnInit {
-  /**
-   * Output for the score
-   */
-  @Output() editProfileExecuted = new EventEmitter<void>();
-
   //Properties
   public userName: string;
   public familyMemberCount: number;
+  public userLevel: string;
+  public userLevelDescription: string;
+  public savingAmount: number;
 
   public editProfile() {
-    this.editProfileExecuted.emit();
+    //TODO Implement routing to quiz
   }
 
   //Methods
@@ -27,5 +25,9 @@ export class ProfileDataComponent implements OnInit {
   private generateMockData() {
     this.familyMemberCount = 2;
     this.userName = 'Aline Bare';
+    this.userLevel = 'Weltenretter';
+    this.userLevelDescription =
+      'Halleluja! Wenn alle so wären wie du, hätte die Welt noch eine echte Chance! Du bist jetzt schon ein holdes Vorbild und man muss sich davor verneigen, dass du nicht müde wirst deinen Plastikmüll noch weiter einzuschränken. Du erzeugst etwa X kg Plastikverpackungsmüll pro Monat, während der Durchschnitt in Deutschland bei X kg liegt. Wir trauen dir noch viel weniger zu, total positiv gemeint.';
+    this.savingAmount = 65.2;
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'pf-expander',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./expander.component.scss'],
 })
 export class ExpanderComponent implements OnInit {
+  @Input() title: string;
+
   constructor() {}
 
   ngOnInit() {}
