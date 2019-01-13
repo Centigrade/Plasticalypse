@@ -1,14 +1,8 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { UserLevel } from './../../shared/types/user-level';
 
-const BASE_API_URL = 'http://10.8.29.15';
-
 @Injectable()
-export class ProfileService {
-  //insert HTTPClient via DependencyInjection in constructor
-  constructor(private http: HttpClient) {}
-
+export class ProfileServiceMock {
   /**
    * Updates the backend values by the given parameters.
    * @param familySize
@@ -20,9 +14,6 @@ export class ProfileService {
       family_size: familySize,
     };
 
-    const url = `${BASE_API_URL}/user/update`;
-
-    // send the data to the given API_URL
-    this.http.post(url, body);
+    console.log('Update profile data on server.', body);
   }
 }
