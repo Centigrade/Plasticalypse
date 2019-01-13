@@ -4,11 +4,11 @@
 <h1 class="question">Wieviele Personen leben in deinem Haushalt?</h1>
 
 <div class="change-container">
-  <button class="change-button"
-          (click)="decrease()">-</button>
+  <button class="change-button dec"
+          (click)="decrease()"></button>
   <span class="family-member-count">{{ familyMemberCount }}</span>
-  <button class="change-button"
-          (click)="increase()">+</button>
+  <button class="change-button inc"
+          (click)="increase()"></button>
 </div>
 
 <pf-submit-button class="assign"
