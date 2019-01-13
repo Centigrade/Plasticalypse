@@ -2,9 +2,10 @@
 
 <div class="answers">
   <div class="answer"
-       *ngFor="let answer of question.answers">
-    <div class="line-container upper"
-         [class.selected]="selectedAnswer === answer">
+       [class.nextSelected]="isNextItemSelected(answer)"
+       [class.selected]="selectedAnswer === answer"
+       *ngFor="let answer of question.answers; let i = index">
+    <div class="line-container upper">
       <div class="line"></div>
       <div class="circle"></div>
     </div>
@@ -13,10 +14,8 @@
            [id]="generateId(answer)"
            [name]="question.question">
     <label class="answer-text"
-           [class.selected]="selectedAnswer === answer"
            [for]="generateId(answer)">{{answer.text}}</label>
-    <div class="line-container lower"
-         [class.selected]="selectedAnswer === answer">
+    <div class="line-container lower">
       <div class="circle"></div>
       <div class="line"></div>
     </div>

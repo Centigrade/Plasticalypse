@@ -16,52 +16,50 @@
   margin: auto;
 }
 
-.answer-text {
-  &.selected {
-    color: $foreground-highlight;
-  }
-}
-
-.line {
-  width: 100%;
-  border-top: 1px solid $foreground;
-
-  .selected & {
-    border-color: $foreground-highlight;
-  }
-}
-
-.circle {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  border: 1px solid $foreground;
-
-  .selected & {
-    border-color: $foreground-highlight;
-  }
-}
-
 .line-container {
   display: flex;
   flex-direction: row;
   align-items: center;
+
+  .line {
+    width: 100%;
+    border-top: 1px solid $foreground;
+  }
+
+  .circle {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 1px solid $foreground;
+  }
 }
 
 .answer {
-  &:nth-child(odd) {
-    z-index: 5;
+
+  // highlight the selected answer lines
+  &.selected .line,
+  &.selected .circle {
+    border-color: $foreground-highlight;
   }
 
-  &:first-child .lower {
-    display: none;
+  &.selected .answer-text {
+    color: $foreground-highlight;
   }
 
-  &:last-child .upper {
-    display: none;
+  // if the next answer is selected, highlight the lower line
+  &.nextSelected .lower .line,
+  &.nextSelected .lower .circle {
+    border-color: $foreground-highlight;
   }
 
+  // if the previous answer is selected, highlight the upper line
+  &.selected+.answer .upper .line,
+  &.selected+.answer .upper .circle {
+    border-color: $foreground-highlight;
+  }
+
+  // hide the lines alternating
   &:nth-child(even) .line-container {
-    transform: scaleX(-1);
+    display: none;
   }
 }
