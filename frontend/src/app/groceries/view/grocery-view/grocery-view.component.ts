@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { GroceryService } from 'src/app/core/services/grocery.service';
 import { Grocery } from '../../types/grocery';
 import { GroceryHistory } from '../../types/grocery-history';
@@ -9,7 +10,7 @@ import { GroceryHistory } from '../../types/grocery-history';
   styleUrls: ['./grocery-view.component.scss'],
 })
 export class GroceryViewComponent {
-  constructor(private groceryService: GroceryService) {
+  constructor(private groceryService: GroceryService, private router: Router) {
     this.groceryService.getGroceryOptions().subscribe((groceries: Grocery[]) => {
       groceries.map(grocery => (grocery.counter = 0));
 
@@ -60,5 +61,9 @@ export class GroceryViewComponent {
     this.totalWeight = 0;
 
     this.groceries.forEach(grocery => (grocery.counter = 0));
+  }
+
+  public evaluateSavings() {
+    this.router.navigate(['evaluation']);
   }
 }
