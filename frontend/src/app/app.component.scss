@@ -26,6 +26,20 @@ $overlay-index: 10;
   }
 }
 
+.menu-button {
+  border: none;
+  outline: none;
+  background: none;
+  height: 30px;
+  width: 30px;
+  background-image: url(../assets/icon/svg/burger.svg);
+  margin: 15px;
+
+  &:active {
+    background-image: url(../assets/icon/svg/burger.pressed.svg);
+  }
+}
+
 .profile {
   position: absolute;
   top: $menubar-height;
