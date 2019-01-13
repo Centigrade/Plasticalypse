@@ -1,9 +1,10 @@
+@import '../../../../styles/index';
+
 :host {
   display: flex;
-  flex-direction: row;
-  margin: 10px;
 }
 
-.title-and-content-container {
-  flex-direction: column;
+.amount {
+  font-size: 100px;
+  color: $foreground-highlight;
 }

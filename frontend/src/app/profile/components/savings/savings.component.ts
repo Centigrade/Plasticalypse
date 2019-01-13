@@ -1,17 +1,13 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'pf-savings',
   templateUrl: './savings.component.html',
   styleUrls: ['./savings.component.scss'],
 })
-export class SavingsComponent implements OnInit {
+export class SavingsComponent {
   //Property
   public title: string;
 
   @Input() savingAmount: number;
-
-  constructor() {}
-
-  ngOnInit() {}
 }

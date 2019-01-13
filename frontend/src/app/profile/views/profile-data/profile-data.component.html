@@ -8,8 +8,11 @@
     {{getUserLevelDescription(user.level)}}
   </pf-expander>
 
-  <pf-savings [savingAmount]="user.savings"></pf-savings>
-
+  <div class="savings">
+    <div class="total">Gesamteinsparungen:</div>
+    <pf-savings [savingAmount]="user.savings"></pf-savings>
+    <div class="unit">Gramm</div>
+  </div>
 
   <button class="start"
           (click)="start()">loslegen!</button>
