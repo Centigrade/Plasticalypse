@@ -14,7 +14,7 @@
   width: 100%;
 
   &.picture_good {
-    background-image: url("../../../../assets/nature.png");
+    background-image: url("../../../../assets/nicecalypse.png");
   }
 
   &.picture_bad {
@@ -22,6 +22,7 @@
     left: 0;
     top: 0;
     background-image: url("../../../../assets/apocalypse.png");
+    mask: url("../../../../assets/maske.png");
     transition: all 0.1s linear;
   }
 }
