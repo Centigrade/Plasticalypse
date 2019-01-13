@@ -9,3 +9,4 @@ export const USERDATA_ROUTE = 'user';
 
 export const GET_GROCERY_OPTIONS = 'groceries';
 export const ADD_GROCERIES = 'groceries/add';
+export const GET_EVALUATION = 'groceries/range';
