@@ -13,8 +13,10 @@ export class PointGraphComponent implements OnChanges {
   @Input() datepoints: DatePoint[] = [];
   @Input() startDate: Date;
   @Input() endDate: Date;
+  @Input() percentage: number;
   @Output() startDateChange: EventEmitter<Date> = new EventEmitter();
   @Output() endDateChange: EventEmitter<Date> = new EventEmitter();
+  @Output() percentageChange: EventEmitter<number> = new EventEmitter();
 
   public minAmount: number = 30;
   public maxAmount: number = 500;
@@ -37,6 +39,21 @@ export class PointGraphComponent implements OnChanges {
     this.shownDatePoints = this.datepoints.filter(datePoint => {
       return datePoint.date >= this.startDate && datePoint.date <= this.endDate;
     });
+
+    const amount = this.shownDatePoints.map(date => date.amount);
+
+    if (amount && amount.length > 0) {
+      const totalAmount = amount.reduce((prev, curr) => prev + curr);
+
+      // this.percentage = totalAmount / 3750;
+      this.percentage = (totalAmount / 1000) * 100;
+
+      console.log(this.percentage);
+    } else {
+      this.percentage = 0;
+    }
+
+    setTimeout(() => this.percentageChange.emit(this.percentage), 500);
   }
 
   public caluclateLeft(index: number) {
