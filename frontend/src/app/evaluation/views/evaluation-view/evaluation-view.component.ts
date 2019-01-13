@@ -11,6 +11,7 @@ export class EvaluationViewComponent {
   public datepoints: DatePoint[] = [];
 
   public percentage = 0;
+  public saved = 0;
 
   public globalAmount = 65;
   public monthlyAmount = 70;

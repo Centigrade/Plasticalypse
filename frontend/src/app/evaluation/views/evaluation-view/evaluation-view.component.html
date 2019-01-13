@@ -4,8 +4,14 @@
   <div class="date date-start">{{ startDate | date: "dd.MM.yyyy" }}</div>
   <div class="date date-end">{{ endDate | date: "dd.MM.yyyy" }}</div>
 </div>
+<div class="saved">
+  <div>{{saved}}</div>
+  <div>Kilogram</div>
+  <div>Gespart</div>
+</div>
 <pf-point-graph class="bar-graph"
                 [datepoints]="datepoints"
                 [(percentage)]="percentage"
+                [(saved)]="saved"
                 [(startDate)]="startDate"
                 [(endDate)]="endDate"></pf-point-graph>
