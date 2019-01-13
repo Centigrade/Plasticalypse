@@ -44,3 +44,7 @@ Thumbs.db
 
 # backend testing database
 backend/db.sqlite3
+
+# compiled python
+__pycache__
+*.pyc

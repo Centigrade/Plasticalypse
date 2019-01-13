@@ -16,7 +16,9 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
+# TODO: the trailing "?" is a bit ugly, but we don't know if there will always be a slash at the end
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^user/', include('profiles.urls')),
+    url(r'^groceries/?', include('groceries.urls')),
+    url(r'^user/?', include('profiles.urls')),
 ]
