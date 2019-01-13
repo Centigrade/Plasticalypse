@@ -8,11 +8,7 @@
 .question-icon {
   width: 191px;
   height: 182px;
-  margin: 95px auto 56px auto;
-}
-
-.question {
-  // font-family: $miri
+  margin: 50px auto 56px auto;
 }
 
 .person {
@@ -21,15 +17,39 @@
   margin: 10px;
 }
 
-.assign {
-  border: none;
+.question {
+  font-size: 20px;
+  text-align: center;
+  margin: auto 50px;
+}
+
+.change-container {
+  margin: auto;
+  display: flex;
+  align-items: center;
+}
+
+.family-member-count {
+  width: 130px;
+  text-align: center;
+  font-size: 110px;
+  color: $foreground-highlight;
+}
+
+.change-button {
   outline: none;
-  width: 65px;
-  height: 65px;
-  margin: 60px auto 18px auto;
-  background: url('/assets/icon/comet.normal.svg');
+  background: transparent;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid $foreground;
+  color: $foreground;
 
   &:active {
-    background: url('/assets/icon/comet.pressed.svg');
+    border-color: $foreground-highlight;
   }
+}
+
+.assign {
+  margin: 10px auto 18px auto;
 }

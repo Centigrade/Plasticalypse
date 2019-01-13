@@ -36,4 +36,14 @@ export class MultipleChoiceComponent implements OnChanges {
   public generateId(answer: Answer): string {
     return this.question.question.concat(answer.text);
   }
+
+  public isNextItemSelected(currentAnswer: Answer): boolean {
+    if (this.selectedAnswer === undefined) {
+      return false;
+    }
+
+    const currentAnswerIndex = this.question.answers.indexOf(currentAnswer);
+    const nextAnswer = this.question.answers[currentAnswerIndex + 1];
+    return nextAnswer === this.selectedAnswer;
+  }
 }

@@ -3,10 +3,13 @@
 
 <h1 class="question">Wieviele Personen leben in deinem Haushalt?</h1>
 
-<button class="person"
-        (click)="personCountChanged(personCount)"
-        *ngFor="let personCount of [1,2,3,4,5]">
-  {{personCount}}
-</button>
+<div class="change-container">
+  <button class="change-button"
+          (click)="decrease()">-</button>
+  <span class="family-member-count">{{ familyMemberCount }}</span>
+  <button class="change-button"
+          (click)="increase()">+</button>
+</div>
 
-<button class="assign">
+<pf-submit-button class="assign"
+                  (click)="assign()">
