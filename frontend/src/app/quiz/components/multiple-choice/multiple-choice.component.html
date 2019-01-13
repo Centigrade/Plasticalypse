@@ -13,8 +13,9 @@
            (input)="selectedAnswer = answer"
            [id]="generateId(answer)"
            [name]="question.question">
-    <label class="answer-text"
-           [for]="generateId(answer)">{{answer.text}}</label>
+    <label [for]="generateId(answer)">
+      <div class="answer-text">{{answer.text}}</div>
+    </label>
     <div class="line-container lower">
       <div class="circle"></div>
       <div class="line"></div>
@@ -22,5 +23,6 @@
   </div>
 </div>
 
-<button (click)="confirm()"
-        [disabled]="selectedAnswer === undefined">speichern</button>
+<pf-submit-button class="confirm"
+                  [style.opacity]="selectedAnswer === undefined ? 0.3 : 1"
+                  (click)="confirm()">

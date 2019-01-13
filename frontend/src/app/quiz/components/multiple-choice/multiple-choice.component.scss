@@ -3,17 +3,23 @@
 :host {
   display: flex;
   flex-direction: column;
+  font-size: 20px;
 }
 
 .question {
   font-size: 20px;
   text-align: center;
-  margin: auto 50px;
+  margin: auto 50px 31px 50px;
+}
+
+input[type=radio] {
+  display: none;
 }
 
 .answers {
   width: 285px;
-  margin: auto;
+  align-self: center;
+  margin-bottom: 30px;
 }
 
 .line-container {
@@ -32,6 +38,11 @@
     border-radius: 50%;
     border: 1px solid $foreground;
   }
+}
+
+.answer-text {
+  text-align: center;
+  margin: 10px auto;
 }
 
 .answer {
@@ -62,4 +73,8 @@
   &:nth-child(even) .line-container {
     display: none;
   }
+}
+
+.confirm {
+  margin: 10px auto 18px auto;
 }

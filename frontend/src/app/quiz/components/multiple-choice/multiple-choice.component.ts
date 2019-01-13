@@ -44,7 +44,6 @@ export class MultipleChoiceComponent implements OnChanges {
 
     const currentAnswerIndex = this.question.answers.indexOf(currentAnswer);
     const nextAnswer = this.question.answers[currentAnswerIndex + 1];
-    console.log(currentAnswer.text, nextAnswer === this.selectedAnswer);
     return nextAnswer === this.selectedAnswer;
   }
 }
