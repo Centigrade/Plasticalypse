@@ -8,6 +8,10 @@
 }
 
 .info-bar {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
   height: $navigation-bar-height;
   color: $foreground;
   font-size: 50px;
