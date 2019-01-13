@@ -1,8 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { BASE_API_URL, PROFILE_UPDATE_ROUTE } from '../types/api';
 import { UserLevel } from './../../shared/types/user-level';
-
-const BASE_API_URL = 'http://10.8.29.15:8000';
 
 @Injectable()
 export class ProfileService {
@@ -20,7 +19,7 @@ export class ProfileService {
       family_size: familySize,
     };
 
-    const url = `${BASE_API_URL}/user/update`;
+    const url = `${BASE_API_URL}/${PROFILE_UPDATE_ROUTE}`;
 
     // send the data to the given API_URL
     this.http.post(url, body).subscribe();

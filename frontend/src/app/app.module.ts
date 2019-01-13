@@ -5,19 +5,20 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { EvaluationModule } from './evaluation/evaluation.module';
 import { GroceriesModule } from './groceries/groceries.module';
+import { LoginModule } from './login/login.module';
 import { QuizModule } from './quiz/quiz.module';
 
 @NgModule({
-  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     GroceriesModule,
     QuizModule,
+    LoginModule,
     EvaluationModule,
     CoreModule,
   ],
-  providers: [],
+  declarations: [AppComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
