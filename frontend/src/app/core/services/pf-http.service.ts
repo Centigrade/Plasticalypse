@@ -9,10 +9,10 @@ const GENERAL_HTTP_OPTIONS = { withCredentials: true };
 export class PfHttpService {
   constructor(private http: HttpClient) {}
 
-  public get(url: string, options: any = {}) {
+  public get<T>(url: string, options: any = {}) {
     options = Object.assign(options, GENERAL_HTTP_OPTIONS);
 
-    return this.http.get(url, options);
+    return this.http.get<T>(url, options);
   }
 
   public post(url: string, body: any, options: any = {}) {
