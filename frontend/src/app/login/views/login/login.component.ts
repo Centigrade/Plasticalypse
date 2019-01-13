@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/services/auth.service';
+import { MenuService } from 'src/app/core/services/menu.service';
 
 @Component({
   selector: 'pf-login',
@@ -8,7 +9,11 @@ import { AuthService } from 'src/app/core/services/auth.service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
-  constructor(private router: Router, private authService: AuthService) {}
+  constructor(
+    private router: Router,
+    private authService: AuthService,
+    private menuService: MenuService,
+  ) {}
   public login(email: string, password: string) {
     console.log('Login now!');
 
@@ -19,6 +24,7 @@ export class LoginComponent {
       // Check whether you are here for the first time?
       // then
       this.router.navigate(['/quiz']);
+      this.menuService.canOpenMenu = true;
 
       // otherwise
       // this.router.navigate(['/grocery']);
