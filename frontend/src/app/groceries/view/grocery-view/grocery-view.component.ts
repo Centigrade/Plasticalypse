@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { GroceryService } from 'src/app/core/services/grocery.service';
 import { Grocery } from '../../types/grocery';
 import { GroceryHistory } from '../../types/grocery-history';
 
@@ -8,45 +9,26 @@ import { GroceryHistory } from '../../types/grocery-history';
   styleUrls: ['./grocery-view.component.scss'],
 })
 export class GroceryViewComponent {
-  constructor() {}
+  constructor(private groceryService: GroceryService) {
+    this.groceryService.getGroceryOptions().subscribe((groceries: Grocery[]) => {
+      groceries.map(grocery => (grocery.counter = 0));
+
+      this.groceries = groceries;
+
+      console.log(this.groceries);
+    });
+  }
+
+  public totalWeight = 0;
 
   private history: GroceryHistory[] = [];
 
-  public buttons: Grocery[] = [
-    {
-      id: 'bottle',
-      icon: 'bottle',
-      counter: 0,
-    },
-    {
-      id: 'case',
-      icon: 'case',
-      counter: 0,
-    },
-    {
-      id: 'cup',
-      icon: 'cup',
-      counter: 0,
-    },
-    {
-      id: 'tetra',
-      icon: 'tetra',
-      counter: 0,
-    },
-    {
-      id: 'tube',
-      icon: 'tube',
-      counter: 0,
-    },
-    {
-      id: 'wrapping',
-      icon: 'wrapping',
-      counter: 0,
-    },
-  ];
+  public groceries: Grocery[] = [];
 
   public increase(button: Grocery) {
     button.counter++;
+
+    this.totalWeight += button.weight;
 
     this.history.push({ grocery: button, action: 'increase' });
   }
@@ -54,6 +36,7 @@ export class GroceryViewComponent {
   public decrease(button: Grocery) {
     if (button.counter > 0) {
       button.counter--;
+      this.totalWeight -= button.weight;
     }
 
     this.history.push({ grocery: button, action: 'decrease' });
@@ -74,6 +57,6 @@ export class GroceryViewComponent {
   public delete() {
     this.history = [];
 
-    this.buttons.forEach(button => (button.counter = 0));
+    this.groceries.forEach(button => (button.counter = 0));
   }
 }

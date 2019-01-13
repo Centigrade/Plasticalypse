@@ -1,5 +1,6 @@
 export interface Grocery {
   id: string;
-  icon: string;
-  counter: number;
+  weight?: number;
+  counter?: number;
+  buyDate?: Date;
 }

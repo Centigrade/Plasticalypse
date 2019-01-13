@@ -7,6 +7,12 @@
   width: 100%;
 }
 
+.question-title {
+  align-self: center;
+  margin: 30px auto 10px auto;
+  flex-shrink: 0;
+}
+
 .question {
   font-size: 20px;
   text-align: center;
@@ -20,7 +26,6 @@ input[type=radio] {
 .answers {
   width: 285px;
   align-self: center;
-  margin-bottom: 30px;
 }
 
 .line-container {

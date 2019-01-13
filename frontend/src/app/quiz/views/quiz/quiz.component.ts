@@ -71,6 +71,7 @@ export class QuizComponent implements OnInit {
     if (this.isLastQuestionStep()) {
       this.profileService.updateProfile(this.familyMemberCount, this.calculatedUserLevel);
       this.router.navigate(['/grocery']);
+
       this.menuService.openMenu();
     }
   }

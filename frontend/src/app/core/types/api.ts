@@ -5,3 +5,6 @@ export const LOGIN_ROUTE = 'user/login';
 export const REGISTER_ROUTE = 'user/register';
 
 export const USERDATA_ROUTE = 'user';
+
+export const GET_GROCERY_OPTIONS = 'groceries';
+export const ADD_GROCERIES = 'groceries/add';
