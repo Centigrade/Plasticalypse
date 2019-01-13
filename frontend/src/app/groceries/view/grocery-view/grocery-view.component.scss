@@ -16,6 +16,24 @@
   color: $foreground;
   font-size: 50px;
   font-family: $font-miriam-libre-bold;
+
+  $delete-icon-size: 40px;
+
+  .delete {
+    margin: ($navigation-bar-height - $delete-icon-size) / 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: $delete-icon-size;
+    height: $delete-icon-size;
+    border-radius: $delete-icon-size / 2;
+    border: 1px solid $foreground;
+
+    .icon {
+      width: $delete-icon-size / 2;
+      height: $delete-icon-size / 2;
+    }
+  }
 }
 
 .groceries {

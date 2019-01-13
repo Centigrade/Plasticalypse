@@ -1,5 +1,11 @@
 <div class=info-bar>
   <span>{{totalWeight}} g</span>
+  <div class="delete"
+       (click)="delete()">
+    <div class="icon"
+         [style.background-image]="'close' | icon:'normal':'svg'">
+    </div>
+  </div>
 </div>
 
 <div class="groceries">

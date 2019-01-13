@@ -57,6 +57,8 @@ export class GroceryViewComponent {
   public delete() {
     this.history = [];
 
-    this.groceries.forEach(button => (button.counter = 0));
+    this.totalWeight = 0;
+
+    this.groceries.forEach(grocery => (grocery.counter = 0));
   }
 }
