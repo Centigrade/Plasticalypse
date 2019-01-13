@@ -1,0 +1,81 @@
+@import '../../../../styles/index';
+
+:host {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  width: 100%;
+}
+
+.question {
+  font-size: 20px;
+  text-align: center;
+  margin: auto 50px 31px 50px;
+}
+
+input[type=radio] {
+  display: none;
+}
+
+.answers {
+  width: 285px;
+  align-self: center;
+  margin-bottom: 30px;
+}
+
+.line-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  .line {
+    width: 100%;
+    border-top: 1px solid $foreground;
+  }
+
+  .circle {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 1px solid $foreground;
+  }
+}
+
+.answer-text {
+  text-align: center;
+  margin: 10px auto;
+}
+
+.answer {
+
+  // highlight the selected answer lines
+  &.selected .line,
+  &.selected .circle {
+    border-color: $foreground-highlight;
+  }
+
+  &.selected .answer-text {
+    color: $foreground-highlight;
+  }
+
+  // if the next answer is selected, highlight the lower line
+  &.nextSelected .lower .line,
+  &.nextSelected .lower .circle {
+    border-color: $foreground-highlight;
+  }
+
+  // if the previous answer is selected, highlight the upper line
+  &.selected+.answer .upper .line,
+  &.selected+.answer .upper .circle {
+    border-color: $foreground-highlight;
+  }
+
+  // hide the lines alternating
+  &:nth-child(even) .line-container {
+    display: none;
+  }
+}
+
+.confirm {
+  margin: 10px auto 18px auto;
+}

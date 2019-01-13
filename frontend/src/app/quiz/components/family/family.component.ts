@@ -6,12 +6,25 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./family.component.scss'],
 })
 export class FamilyComponent {
+  public familyMemberCount = 1;
   /**
    * Output for the score
    */
   @Output() familyMemberCountChanged = new EventEmitter<number>();
 
-  public personCountChanged(count: number) {
-    this.familyMemberCountChanged.emit(count);
+  public decrease() {
+    if (this.familyMemberCount > 1) {
+      this.familyMemberCount--;
+    }
+  }
+
+  public increase() {
+    if (this.familyMemberCount < 12) {
+      this.familyMemberCount++;
+    }
+  }
+
+  public assign() {
+    this.familyMemberCountChanged.emit(this.familyMemberCount);
   }
 }

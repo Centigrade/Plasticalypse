@@ -1,0 +1,35 @@
+:host {
+  display: block;
+  height: 100%;
+}
+
+$bar-height: 140px;
+$date-height: 22px;
+
+.image {
+  height: calc(100% - #{$date-height} - #{$bar-height});
+}
+
+.evaluation {
+  position: relative;
+  width: 100%;
+
+  .date {
+    display: inline-block;
+    height: $date-height;
+  }
+
+  .date-start {
+    margin-left: 10px;
+  }
+
+  .date-end {
+    position: absolute;
+    right: 10px;
+  }
+}
+
+.bar-graph {
+  width: 100%;
+  height: $bar-height;
+}

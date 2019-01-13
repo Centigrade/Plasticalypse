@@ -1,0 +1,9 @@
+<pf-cleaness-image class="image"></pf-cleaness-image>
+<div class="evaluation">
+  <div class="date date-start">{{ startDate | date: "dd.MM.yyyy" }}</div>
+  <div class="date date-end">{{ endDate | date: "dd.MM.yyyy" }}</div>
+</div>
+<pf-point-graph class="bar-graph"
+                [datepoints]="datepoints"
+                [(startDate)]="startDate"
+                [(endDate)]="endDate"></pf-point-graph>

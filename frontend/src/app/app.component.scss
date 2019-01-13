@@ -1,0 +1,40 @@
+@import '../styles/index';
+
+$menubar-height: 50px;
+$overlay-index: 10;
+
+.menubar {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: $menubar-height;
+  top: 0;
+  z-index: $overlay-index;
+  justify-content: space-between;
+
+  // Ensure that clicks are passed through
+  pointer-events: none;
+
+  // Ensure that clicks are captured on the buttons again
+  button {
+    pointer-events: all;
+  }
+
+  &.menu-opened {
+    background: $background;
+    pointer-events: all;
+  }
+}
+
+.profile {
+  position: absolute;
+  top: $menubar-height;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+  // $menubar-height
+  height: calc(100% - 50px);
+  background: $background;
+  z-index: $overlay-index;
+}

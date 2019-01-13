@@ -1,5 +1,15 @@
-<button (click)="increase.emit()">
-  <img class="icon"
-       [src]="icon | icon" />
-  <div *ngIf="counter !== 0">{{counter}}</div>
+<button class="button"
+        (click)="increase.emit()">
+  <div class="icon"
+       [style.marginLeft]="alignment === 'left' ? '15px' : ''"
+       [style.marginRight]="alignment === 'right' ? '15px' : ''"
+       [style.backgroundImage]="icon | icon:(counter !== 0 ? 'active' : 'normal'):'svg'"></div>
+  <div class="counter"
+       [ngClass]="{added: counter !== 0}">{{counter}}</div>
+</button>
+<button class="decrease"
+        [style.borderWidth]="counter !== 0 ? '2px' : '0'"
+        [style.left]="alignment === 'left' ? '26px' : ''"
+        [style.right]="alignment === 'right' ? '26px' : ''"
+        (click)="decrease.emit()"><span class="dash"></span>
 </button>

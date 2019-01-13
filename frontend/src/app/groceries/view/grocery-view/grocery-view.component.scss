@@ -1,0 +1,72 @@
+@import '../../../../styles/index';
+
+:host {
+  display: block;
+  position: relative;
+  background: $background;
+  height: 100%;
+}
+
+.info-bar {
+  height: $navigation-bar-height;
+  color: $foreground;
+  font-size: 50px;
+  font-family: $font-miriam-libre-bold;
+}
+
+.groceries {
+  display: grid;
+  grid-template-columns: 50% 50%;
+
+  $border-padding: 15px;
+
+  .square {
+    position: relative;
+    box-sizing: border-box;
+
+    .seperator {
+      position: absolute;
+      bottom: -1px;
+      display: inline-block;
+      margin-left: $border-padding;
+      margin-right: $border-padding;
+      width: calc(100% - #{$border-padding * 2});
+      border-bottom: 2px solid $foreground;
+    }
+
+    &:nth-child(odd) {
+      &::after {
+        content: '';
+        position: absolute;
+        top: $border-padding;
+        right: 0;
+        height: calc(100% - #{$border-padding * 2});
+        border-right: 2px solid $foreground;
+      }
+    }
+
+    &::before {
+      content: '';
+      display: block;
+      padding-top: 100%;
+    }
+
+    .item {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+
+button {
+  color: white;
+}
+
+.submit {
+  position: fixed;
+  right: calc(50% - 55px);
+  bottom: 10px;
+}
