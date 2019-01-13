@@ -49,7 +49,7 @@ export class PointGraphComponent implements OnChanges {
       // const maxSaved = 3750
       const totalAmount = amount.reduce((prev, curr) => prev + curr);
 
-      this.saved = Math.min(0, maxValue - totalAmount);
+      this.saved = Math.max(0, maxValue - totalAmount);
       this.percentage = (totalAmount / maxValue) * 100;
     } else {
       this.saved = 0;

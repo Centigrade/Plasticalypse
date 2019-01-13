@@ -6,6 +6,7 @@ $button-size: 110px;
   display: block;
   width: $button-size;
   height: $button-size;
+  background-color: $background;
 }
 
 .icon {
@@ -16,6 +17,8 @@ $button-size: 110px;
 
 .button {
   @include reset_button();
+
+
 
   width: 100%;
   height: 100%;
