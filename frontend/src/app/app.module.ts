@@ -7,6 +7,8 @@ import { EvaluationModule } from './evaluation/evaluation.module';
 import { GroceriesModule } from './groceries/groceries.module';
 import { LoginModule } from './login/login.module';
 import { QuizModule } from './quiz/quiz.module';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   imports: [
@@ -17,6 +19,7 @@ import { QuizModule } from './quiz/quiz.module';
     LoginModule,
     EvaluationModule,
     CoreModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   declarations: [AppComponent],
   bootstrap: [AppComponent],

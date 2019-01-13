@@ -24,7 +24,8 @@
             "tsConfig": "frontend/src/tsconfig.app.json",
             "assets": [
               "frontend/src/favicon.ico",
-              "frontend/src/assets"
+              "frontend/src/assets",
+              "frontend/src/manifest.json"
             ],
             "styles": [
               "frontend/src/styles.scss"
@@ -33,10 +34,12 @@
           },
           "configurations": {
             "production": {
-              "fileReplacements": [{
-                "replace": "frontend/src/environments/environment.ts",
-                "with": "frontend/src/environments/environment.prod.ts"
-              }],
+              "fileReplacements": [
+                {
+                  "replace": "frontend/src/environments/environment.ts",
+                  "with": "frontend/src/environments/environment.prod.ts"
+                }
+              ],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -46,11 +49,14 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
-              "budgets": [{
-                "type": "initial",
-                "maximumWarning": "2mb",
-                "maximumError": "5mb"
-              }]
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ],
+              "serviceWorker": true
             }
           }
         },
@@ -84,7 +90,8 @@
             "scripts": [],
             "assets": [
               "frontend/src/favicon.ico",
-              "frontend/src/assets"
+              "frontend/src/assets",
+              "frontend/src/manifest.json"
             ]
           }
         },
@@ -154,10 +161,12 @@
           },
           "configurations": {
             "production": {
-              "fileReplacements": [{
-                "replace": "frontend/src/environments/environment.ts",
-                "with": "frontend/src/environments/environment.prod.ts"
-              }],
+              "fileReplacements": [
+                {
+                  "replace": "frontend/src/environments/environment.ts",
+                  "with": "frontend/src/environments/environment.prod.ts"
+                }
+              ],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
