@@ -3,9 +3,9 @@ from django.db import models
 
 
 class Profile(models.Model):
-    BEGINNER = 1000
-    MODERATE = 800
-    HARDLINER = 500
+    BEGINNER = 3750
+    MODERATE = 3083
+    HARDLINER = 2333
     levels = {
         "beginner": BEGINNER,
         "moderate": MODERATE,
