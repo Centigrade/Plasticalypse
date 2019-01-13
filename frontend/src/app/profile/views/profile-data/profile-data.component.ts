@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { MenuService } from 'src/app/core/services/menu.service';
 import { UserLevel } from 'src/app/shared/types/user-level';
 import { ProfileService } from './../../../core/services/profile.service';
 import { UserData } from './../../../shared/types/user-data';
@@ -13,11 +15,16 @@ export class ProfileDataComponent implements OnInit {
   //Properties
   public user$: Observable<UserData>;
 
-  public editProfile(profile) {
-    //TODO Implement routing to quiz
+  public editProfile() {
+    this.router.navigate(['/quiz']);
+    this.menuService.closeMenu();
   }
 
-  constructor(private profileService: ProfileService) {}
+  constructor(
+    private profileService: ProfileService,
+    private router: Router,
+    private menuService: MenuService,
+  ) {}
 
   //Methods
   ngOnInit() {

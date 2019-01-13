@@ -14,5 +14,6 @@ import { ProfileDataComponent } from './views/profile-data/profile-data.componen
     ExpanderComponent,
   ],
   imports: [ProfileRoutingModule, CommonModule],
+  exports: [ProfileDataComponent],
 })
 export class ProfileModule {}
