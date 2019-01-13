@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserLevel } from 'src/app/shared/types/user-level';
+import { MenuService } from '../../../core/services/menu.service';
+import { UserLevel } from '../../../shared/types/user-level';
 import { Answer } from '../../types/answer';
 import { Question } from '../../types/question';
 import { ProfileService } from './../../../core/services/profile.service';
@@ -44,7 +45,11 @@ export class QuizComponent implements OnInit {
     return UserLevel.Moderate;
   }
 
-  constructor(private readonly profileService: ProfileService, private readonly router: Router) {}
+  constructor(
+    private readonly profileService: ProfileService,
+    private readonly router: Router,
+    private menuService: MenuService,
+  ) {}
 
   ngOnInit() {
     this.buildQuestions();
@@ -66,6 +71,8 @@ export class QuizComponent implements OnInit {
     if (this.isLastQuestionStep()) {
       this.profileService.updateProfile(this.familyMemberCount, this.calculatedUserLevel);
       this.router.navigate(['/grocery']);
+
+      this.menuService.openMenu();
     }
   }
 
