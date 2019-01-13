@@ -1,34 +1,9 @@
-<!-- Wrapper for Apocalypse picture displaying progress -->
-<div class="global_progress_picture_wrapper">
-  <div class="global_progress_picture global_progress_picture_good"></div>
-  <div class="global_progress_picture global_progress_picture_bad" [style.left]="global_amount+'%'"></div>
+<pf-cleaness-image class="image"></pf-cleaness-image>
+<div class="evaluation">
+  <div class="date date-start">{{ startDate | date: "dd.MM.yyyy" }}</div>
+  <div class="date date-end">{{ endDate | date: "dd.MM.yyyy" }}</div>
 </div>
-<!-- Wrapper for bar graph for a given time interval -->
-<div class="monthly_evaluation">
-  <!-- start date of the interval eval -->
-  <div class="monthly_date monthly_date_start">{{ monthly_start_date | date: "dd.MM.yyyy" }}</div>
-  <!-- end date of the interval eval -->
-  <div class="monthly_date monthly_date_end">{{ monthly_end_date | date: "dd.MM.yyyy" }}</div>
-  <!-- bubble showing consumption over the interval -->
-  <div class="monthly_bubble">
-    <div class="monthly_bubble_wrapper">
-      <!-- amount consumed in currently selected interval -->
-      <span class="monthly_bubble_text monthly_bubble_amount">560g</span>
-      <span class="monthly_bubble_text monthly_bubble_suffix">gespart</span>
-    </div>
-    <div class="monthly_bubble_fill" [style.height]="monthly_amount+'px'"></div>
-  </div>
-  <!-- scrollable container to allow travelling through personal history -->
-  <div class="monthly_evaluation_scrollable">
-    <!-- bar for every single entry in the user's history -->
-    <div *ngFor='let datepoint of datepoints; let index = index'
-        class="datepoint"
-        [style.width]="datepoint.amount + 'px'"
-        [style.left]="index * 100 + 'px'">
-        <div class="datepoint_wrapper">
-          <!-- amount for this entry -->
-          <span class="datepoint_amount">{{datepoint.amount}}</span>
-        </div>
-    </div>
-  </div>
-</div>
+<pf-point-graph class="bar-graph"
+                [datepoints]="datepoints"
+                [(startDate)]="startDate"
+                [(endDate)]="endDate"></pf-point-graph>
