@@ -1,12 +1,12 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BASE_API_URL, PROFILE_UPDATE_ROUTE } from '../types/api';
 import { UserLevel } from './../../shared/types/user-level';
+import { PfHttpService } from './pf-http.service';
 
 @Injectable()
 export class ProfileService {
   //insert HTTPClient via DependencyInjection in constructor
-  constructor(private http: HttpClient) {}
+  constructor(private http: PfHttpService) {}
 
   /**
    * Updates the backend values by the given parameters.

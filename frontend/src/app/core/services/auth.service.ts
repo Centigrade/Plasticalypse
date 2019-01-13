@@ -1,13 +1,13 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { BASE_API_URL, LOGIN_ROUTE, REGISTER_ROUTE } from '../types/api';
+import { PfHttpService } from './pf-http.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: PfHttpService) {}
 
   public login(email: string, password: string): Observable<any> {
     const body = { email, password };
