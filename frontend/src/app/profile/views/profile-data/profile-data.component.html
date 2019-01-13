@@ -1,11 +1,14 @@
-<pf-family-members-count [familyMembersCount]="familyMemberCount"
-                         [familyName]="userName"></pf-family-members-count>
+<ng-container *ngIf="user$|async as user">
 
-<pf-expander [title]="userLevel">
-  {{userLevelDescription}}
-</pf-expander>
+  <pf-family-members-count [familyMembersCount]="user.family_size"
+                           [familyName]="user.email.split('@')[0]"></pf-family-members-count>
 
-<pf-savings [savingAmount]="savingAmount"></pf-savings>
+  <pf-expander [title]="getUserLevelTitle(user.level)">
+    {{getUserLevelDescription(user.level)}}
+  </pf-expander>
 
-<button class="edit-profile"
-        (click)="editProfile()">Profil anpassen</button>
+  <pf-savings [savingAmount]="user.savings"></pf-savings>
+
+  <button class="edit-profile"
+          (click)="editProfile()">Profil anpassen</button>
+</ng-container>
