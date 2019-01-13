@@ -10,7 +10,11 @@ import { GroceryHistory } from '../../types/grocery-history';
   styleUrls: ['./grocery-view.component.scss'],
 })
 export class GroceryViewComponent {
+<<<<<<< HEAD
   constructor(private router: Router, private groceryService: GroceryService) {
+=======
+  constructor(private groceryService: GroceryService, private router: Router) {
+>>>>>>> 69c5d2cbf79a68b4597bcc237fe30c6d7c621e90
     this.groceryService.getGroceryOptions().subscribe((groceries: Grocery[]) => {
       groceries.map(grocery => (grocery.counter = 0));
 
@@ -61,7 +65,7 @@ export class GroceryViewComponent {
     this.groceries.forEach(grocery => (grocery.counter = 0));
   }
 
-  public submit() {
+  public evaluateSavings() {
     this.groceryService.addGroceries(this.groceries).subscribe(() => {
       console.log('Result');
       this.router.navigate(['/evaluation']);
