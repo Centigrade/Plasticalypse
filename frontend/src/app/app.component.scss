@@ -40,7 +40,7 @@ $overlay-index: 10;
   }
 }
 
-.profile {
+.profile-container {
   position: absolute;
   top: $menubar-height;
   display: flex;
@@ -51,4 +51,8 @@ $overlay-index: 10;
   height: calc(100% - 50px);
   background: $background;
   z-index: $overlay-index;
+}
+
+.profile {
+  flex-grow: 1;
 }
