@@ -3,7 +3,8 @@
   <pf-family-members-count [familyMembersCount]="user.family_size"
                            [familyName]="user.email.split('@')[0]"></pf-family-members-count>
 
-  <pf-expander [title]="getUserLevelTitle(user.level)">
+  <pf-expander class="expander"
+               [title]="getUserLevelTitle(user.level)">
     {{getUserLevelDescription(user.level)}}
   </pf-expander>
 

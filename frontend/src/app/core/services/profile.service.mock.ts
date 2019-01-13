@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
+import { UserData } from '../../shared/types/user-data';
 import { UserLevel } from './../../shared/types/user-level';
 
 @Injectable()
@@ -15,5 +17,16 @@ export class ProfileServiceMock {
     };
 
     console.log('Update profile data on server.', body);
+  }
+
+  public getProfileData(): Observable<UserData> {
+    const dummyData = {
+      email: 'david.wuerfel@centigrade.de',
+      family_size: 2,
+      level: UserLevel.Moderate,
+      savings: 42,
+    };
+
+    return of(dummyData);
   }
 }

@@ -1,9 +1,14 @@
 :host {
-  margin: 50px 0 0 0;
+  margin: 20px 0 0 0;
   display: block;
   background-image: url(../../../../assets/profil.gr.klein.png);
   background-size: auto 751px;
   background-position-x: center;
+  background-position-y: -60px;
+}
+
+.expander {
+  margin: auto 50px;
 }
 
 .edit-profile {

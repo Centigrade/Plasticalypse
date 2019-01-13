@@ -8,7 +8,5 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ExpanderComponent implements OnInit {
   @Input() title: string;
 
-  constructor() {}
-
-  ngOnInit() {}
+  public isOpen = false;
 }
