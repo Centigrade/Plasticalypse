@@ -11,6 +11,11 @@ export class FamilyMembersCountComponent implements OnInit {
    */
   @Input() familyMembersCount: number;
 
+  /**
+   * The family name
+   */
+  @Input() familyName: string;
+
   constructor() {}
 
   ngOnInit() {}

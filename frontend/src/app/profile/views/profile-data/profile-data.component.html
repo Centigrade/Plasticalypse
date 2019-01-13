@@ -1,8 +1,5 @@
-<p>
-  {{userName}}
-</p>
-
-<pf-family-members-count [familyMembersCount]="familyMemberCount"></pf-family-members-count>
+<pf-family-members-count [familyMembersCount]="familyMemberCount"
+                         [familyName]="userName"></pf-family-members-count>
 
 <pf-expander [title]="userLevel">
   {{userLevelDescription}}
