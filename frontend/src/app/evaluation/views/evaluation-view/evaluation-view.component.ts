@@ -8,15 +8,24 @@ import { DatePoint } from '../../types/datepoint';
 })
 export class EvaluationViewComponent {
   public datepoints: DatePoint[] = [
-    { date: new Date(2019, 1, 12), amount: 31 },
-    { date: new Date(2018, 12, 31), amount: 30 },
-    { date: new Date(2018, 12, 30), amount: 50 },
-    { date: new Date(2018, 11, 12), amount: 20 },
-    { date: new Date(2018, 11, 1), amount: 11 },
-    { date: new Date(2018, 10, 1), amount: 17 },
+    { date: new Date(2019, 1, 1), amount: 31 },
+    { date: new Date(2019, 1, 2), amount: 600 },
+    { date: new Date(2019, 1, 3), amount: 20 },
+    { date: new Date(2019, 1, 4), amount: 100 },
+    { date: new Date(2019, 1, 4), amount: 100 },
+    { date: new Date(2019, 1, 4), amount: 100 },
+    { date: new Date(2019, 1, 4), amount: 100 },
+    { date: new Date(2019, 1, 4), amount: 100 },
+    { date: new Date(2019, 1, 4), amount: 100 },
+    { date: new Date(2019, 1, 4), amount: 100 },
+    { date: new Date(2019, 1, 5), amount: 3 },
+    { date: new Date(2019, 1, 6), amount: 45 },
+    { date: new Date(2019, 1, 7), amount: 664 },
+    { date: new Date(2019, 1, 8), amount: 346 },
+    { date: new Date(2019, 1, 9), amount: 220 },
   ];
-  public global_amount = 65;
-  public monthly_amount = 70;
-  public monthly_end_date: Date = new Date();
-  public monthly_start_date: Date = new Date();
+  public globalAmount = 65;
+  public monthlyAmount = 70;
+  public startDate: Date = new Date(2019, 0, 1);
+  public endDate: Date = new Date(2019, 0, 31);
 }

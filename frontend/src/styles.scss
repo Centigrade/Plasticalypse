@@ -3,12 +3,36 @@
 /* You can add global styles to this file, and also import other style files */
 html,
 body {
+  position: fixed;
+  overflow: hidden;
+  width: 100%;
   height: 100%;
   padding: 0;
   margin: 0;
   font-family: $font-family-standard;
   font-weight: bold;
   color: $foreground;
+  background: $background;
+}
+
+* {
+  /* iOS Safari */
+  -webkit-touch-callout: none;
+
+  /* Safari */
+  -webkit-user-select: none;
+
+  /* Konqueror HTML */
+  -khtml-user-select: none;
+
+  /* Firefox */
+  -moz-user-select: none;
+
+  /* Internet Explorer/Edge */
+  -ms-user-select: none;
+
+  /* Non-prefixed version, currently supported by Chrome and Opera */
+  user-select: none;
 }
 
 @font-face {

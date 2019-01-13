@@ -3,116 +3,33 @@
   height: 100%;
 }
 
-.global_progress_picture_wrapper {
-  display: block;
-  height: 70%;
-  overflow: hidden;
+$bar-height: 140px;
+$date-height: 22px;
+
+.image {
+  height: calc(100% - #{$date-height} - #{$bar-height});
+}
+
+.evaluation {
   position: relative;
   width: 100%;
+
+  .date {
+    display: inline-block;
+    height: $date-height;
+  }
+
+  .date-start {
+    margin-left: 10px;
+  }
+
+  .date-end {
+    position: absolute;
+    right: 10px;
+  }
 }
 
-.global_progress_picture {
-  background-position: left center;
-  display: block;
-  height: 100%;
-  overflow: hidden;
-  position: absolute;
-  top: 0;
+.bar-graph {
   width: 100%;
-}
-
-.global_progress_picture_bad {
-  background-image: url("../../../../assets/apocalypse.jpg");
-}
-
-.global_progress_picture_good {
-  background-image: url("../../../../assets/nature.jpg");
-  left: 0;
-}
-
-.monthly_evaluation {
-  height: 30%;
-  position: relative;
-  width: 100%;
-}
-
-.monthly_date {
-  display: inline-block;
-  position: absolute;
-  top: 10px;
-}
-
-.monthly_date_start {
-  left: 10px;
-}
-
-.monthly_date_end {
-  right: 10px;
-}
-
-.monthly_bubble {
-  border-radius: 50%;
-  border: 1.5px solid rgb(255, 0, 0);
-  height: 100px;
-  left: calc(50% - 50px);
-  overflow: hidden;
-  position: absolute;
-  top: calc(50% - 50px);
-  width: 100px;
-}
-
-.monthly_bubble_wrapper {
-  height: 100%;
-  position: relative;
-  width: 100%;
-}
-
-.monthly_bubble_text {
-  position: absolute;
-  text-align: center;
-  width: 100%;
-  z-index: 2;
-}
-
-.monthly_bubble_amount {
-  bottom: 50px;
-}
-
-.monthly_bubble_suffix {
-  top: 50px;
-}
-
-.monthly_bubble_fill {
-  background-color: rgba(255, 0, 0, 0.7);
-  bottom: 0;
-  display: block;
-  position: absolute;
-  width: 100%;
-  z-index: 1;
-}
-
-.datepoint {
-  background-color: rgb(255, 128, 0);
-  border-radius: 5px;
-  bottom: 0px;
-  display: block;
-  height: 10px;
-  position: absolute;
-  transform: rotate(270deg);
-  transform-origin: left 50%;
-}
-
-.datepoint_wrapper {
-  display: block;
-  height: 100%;
-  position: relative;
-  width: 100%;
-}
-
-.datepoint_amount {
-  font-size: 10px;
-  line-height: 10px;
-  padding-left: calc(100% + 3px);
-  position: absolute;
-  vertical-align: middle;
+  height: $bar-height;
 }
