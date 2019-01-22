@@ -1,14 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Grocery } from 'src/app/groceries/types/grocery';
-import { PfHttpService } from './pf-http.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class GroceryServiceMock {
-  constructor(private http: PfHttpService) {}
-
   public getGroceryOptions(): Observable<any> {
     return of([
       {
