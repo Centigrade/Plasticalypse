@@ -17,7 +17,6 @@ export class LoginComponent {
   public login(email: string, password: string) {
     console.log('Login now!');
 
-    console.log('Register now!', email, password);
     this.authService.login(email, password).subscribe(result => {
       console.log('Logged in', result);
 

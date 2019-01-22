@@ -14,7 +14,6 @@ export class CleanessImageComponent implements OnChanges {
   constructor(private sanitizer: DomSanitizer) {}
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log(this.percentage);
     this.clippingPath = this.clipPath(this.percentage);
   }
 
