@@ -1,0 +1,26 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    // In both configurations you have to run "ng serve" prio to debugging.
+    // In both cases setting break points in Angular TypeScript code should work out-of-the-box.
+    // If the browser is already opened, you can later attach to it.
+    {
+      "type": "chrome",
+      "request": "attach",
+      "name": "Attach to Chrome",
+      "port": 9222,
+      "webRoot": "${workspaceFolder}/frontend"
+    },
+    // Only if your chrome browser is closed, you can launch it. Otherwise an error occurs.
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Launch Chrome against localhost",
+      "url": "http://localhost:4200",
+      "webRoot": "${workspaceFolder}/frontend"
+    }
+  ]
+}
