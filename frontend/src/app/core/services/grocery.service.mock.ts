@@ -42,8 +42,7 @@ export class GroceryServiceMock {
   }
 
   public addGroceries(groceries: Grocery[]): Observable<Grocery[]> {
-    const addGroceries: any = { date: new Date() };
-    groceries.forEach(grocery => (addGroceries[grocery.id] = grocery.counter));
-    return of(groceries);
+    console.log('Adding groceries:', groceries);
+    return of();
   }
 }
