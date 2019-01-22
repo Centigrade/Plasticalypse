@@ -6,24 +6,44 @@ import { Grocery } from 'src/app/groceries/types/grocery';
   providedIn: 'root',
 })
 export class GroceryServiceMock {
-  public getGroceryOptions(): Observable<any> {
+  public getGroceryOptions(): Observable<Grocery[]> {
     return of([
       {
         id: 'bottle',
         counter: 1,
-        weight: 12,
+        weight: 3,
       },
       {
         id: 'cup',
         counter: 1,
         weight: 1,
       },
+      {
+        id: 'tetra',
+        counter: 1,
+        weight: 5,
+      },
+      {
+        id: 'case',
+        counter: 1,
+        weight: 1,
+      },
+      {
+        id: 'tube',
+        counter: 1,
+        weight: 1,
+      },
+      {
+        id: 'wrapping',
+        counter: 1,
+        weight: 4,
+      },
     ]);
   }
 
-  public addGroceries(groceries: Grocery[]): Observable<any> {
+  public addGroceries(groceries: Grocery[]): Observable<Grocery[]> {
     const addGroceries: any = { date: new Date() };
     groceries.forEach(grocery => (addGroceries[grocery.id] = grocery.counter));
-    return of({ added: groceries });
+    return of(groceries);
   }
 }
