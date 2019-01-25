@@ -35,7 +35,7 @@ build:production:
     - npm run build:prod:ci
   artifacts:
     paths:
-      - ./dist/prod
+      - ./dist
     expire_in: '2 hrs'
 
 pages:
@@ -45,7 +45,7 @@ pages:
     - pwd
   script:
     - mkdir .public
-    - cp -r dist/prod/ .public
+    - cp -r dist/plastic-free .public
     - mv .public public
   artifacts:
     paths:
