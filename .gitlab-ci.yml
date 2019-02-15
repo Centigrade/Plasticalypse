@@ -45,7 +45,7 @@ pages:
     - pwd
   script:
     - mkdir .public
-    - cp -r dist/plastic-free .public
+    - cp -r dist/plastic-free/* .public
     - mv .public public
   artifacts:
     paths:
