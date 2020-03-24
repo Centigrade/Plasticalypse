@@ -1,5 +1,6 @@
 import { SharedModule } from '../../../shared/shared.module';
 import { Question } from '../../types/question';
+import { QuestionTitleComponent } from '../question-title/question-title.component';
 import { MultipleChoiceComponent } from './multiple-choice.component';
 
 const SAMPLE_QUESTION: Question = {
@@ -19,6 +20,7 @@ export default {
 export const standard = () => ({
   component: MultipleChoiceComponent,
   moduleMetadata: {
+    declarations: [MultipleChoiceComponent, QuestionTitleComponent],
     imports: [SharedModule],
   },
   template: `<pf-multiple-choice [question]="question"></pf-multiple-choice>`,
