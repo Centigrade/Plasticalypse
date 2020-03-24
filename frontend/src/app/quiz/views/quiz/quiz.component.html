@@ -1,9 +1,15 @@
 <!-- First question. -->
-<pf-family (familyMemberCountChanged)="familyMemberCountAssigned($event)"
-           *ngIf="currentQuestionStep === -1"></pf-family>
+<pf-family
+  (familyMemberCountChanged)="familyMemberCountAssigned($event)"
+  *ngIf="currentQuestionStep === -1"
+></pf-family>
 
 <!-- Multiple choice questions come in play after first question. -->
-<ng-container *ngIf="currentQuestionStep > -1 && currentQuestionStep < multipleChoiceQuestions.length">
-  <pf-multiple-choice [question]="multipleChoiceQuestions[currentQuestionStep]"
-                      (answered)="addAnswerScoreToLevelScore($event)"></pf-multiple-choice>
+<ng-container
+  *ngIf="currentQuestionStep > -1 && currentQuestionStep < multipleChoiceQuestions.length"
+>
+  <pf-multiple-choice
+    [question]="multipleChoiceQuestions[currentQuestionStep]"
+    (answered)="addAnswerScoreToLevelScore($event)"
+  ></pf-multiple-choice>
 </ng-container>

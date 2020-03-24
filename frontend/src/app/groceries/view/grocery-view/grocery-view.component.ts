@@ -12,7 +12,7 @@ import { GroceryHistory } from '../../types/grocery-history';
 export class GroceryViewComponent {
   constructor(private router: Router, private groceryService: GroceryService) {
     this.groceryService.getGroceryOptions().subscribe((groceries: Grocery[]) => {
-      groceries.map(grocery => (grocery.counter = 0));
+      groceries.map((grocery) => (grocery.counter = 0));
 
       this.groceries = groceries;
     });
@@ -58,7 +58,7 @@ export class GroceryViewComponent {
 
     this.totalWeight = 0;
 
-    this.groceries.forEach(grocery => (grocery.counter = 0));
+    this.groceries.forEach((grocery) => (grocery.counter = 0));
   }
 
   public evaluateSavings() {

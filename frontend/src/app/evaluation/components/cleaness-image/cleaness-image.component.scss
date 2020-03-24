@@ -14,15 +14,15 @@
   width: 100%;
 
   &.picture_good {
-    background-image: url("../../../../assets/nicecalypse.png");
+    background-image: url('../../../../assets/nicecalypse.png');
   }
 
   &.picture_bad {
     position: absolute;
     left: 0;
     top: 0;
-    background-image: url("../../../../assets/apocalypse.png");
-    mask: url("../../../../assets/maske-2.png");
+    background-image: url('../../../../assets/apocalypse.png');
+    mask: url('../../../../assets/maske-2.png');
     transition: all 0.1s linear;
   }
 }

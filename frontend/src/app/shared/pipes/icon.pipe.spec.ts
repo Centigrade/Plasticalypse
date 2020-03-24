@@ -4,7 +4,7 @@ import { IconPipe } from './icon.pipe';
 
 describe('Pipe: Icone', () => {
   it('create an instance', () => {
-    let pipe = new IconPipe();
+    const pipe = new IconPipe();
     expect(pipe).toBeTruthy();
   });
 });

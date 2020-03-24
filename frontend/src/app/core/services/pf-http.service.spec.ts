@@ -6,7 +6,7 @@ import { PfHttpService } from './pf-http.service';
 describe('Service: PfHttp', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [PfHttpService]
+      providers: [PfHttpService],
     });
   });
 

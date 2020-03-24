@@ -3,20 +3,24 @@
 <h1 class="question">{{ question.question }}</h1>
 
 <div class="answers">
-  <div class="answer"
-       [class.nextSelected]="isNextItemSelected(answer)"
-       [class.selected]="selectedAnswer === answer"
-       *ngFor="let answer of question.answers; let i = index">
+  <div
+    class="answer"
+    [class.nextSelected]="isNextItemSelected(answer)"
+    [class.selected]="selectedAnswer === answer"
+    *ngFor="let answer of question.answers; let i = index"
+  >
     <div class="line-container upper">
       <div class="line"></div>
       <div class="circle"></div>
     </div>
-    <input type="radio"
-           (input)="selectedAnswer = answer"
-           [id]="generateId(answer)"
-           [name]="question.question">
+    <input
+      type="radio"
+      (input)="selectedAnswer = answer"
+      [id]="generateId(answer)"
+      [name]="question.question"
+    />
     <label [for]="generateId(answer)">
-      <div class="answer-text">{{answer.text}}</div>
+      <div class="answer-text">{{ answer.text }}</div>
     </label>
     <div class="line-container lower">
       <div class="circle"></div>
@@ -25,6 +29,9 @@
   </div>
 </div>
 
-<pf-submit-button class="confirm"
-                  [style.opacity]="selectedAnswer === undefined ? 0.3 : 1"
-                  (click)="confirm()">
+<pf-submit-button
+  class="confirm"
+  [style.opacity]="selectedAnswer === undefined ? 0.3 : 1"
+  (click)="confirm()"
+>
+</pf-submit-button>

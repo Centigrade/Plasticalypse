@@ -11,9 +11,8 @@ describe('PointGraphComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PointGraphComponent ]
-    })
-    .compileComponents();
+      declarations: [PointGraphComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

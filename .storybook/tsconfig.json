@@ -1,0 +1,9 @@
+{
+  "extends": "../frontend/src/tsconfig.app.json",
+  "compilerOptions": {
+    "types": ["node"]
+  },
+  "exclude": ["../backend/**/*", "../frontend/src/test.ts", "../frontend/src/**/*.spec.ts"],
+  "include": ["../frontend/src/**/*"],
+  "files": ["./typings.d.ts"]
+}

@@ -6,7 +6,7 @@ import { GroceryService } from './grocery.service';
 describe('Service: Grocery', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [GroceryService]
+      providers: [GroceryService],
     });
   });
 

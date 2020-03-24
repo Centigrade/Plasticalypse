@@ -13,6 +13,6 @@ export class RegisterComponent {
     console.log('Register now!', email, password);
     this.authService
       .register(email, password)
-      .subscribe(result => console.log('Succeeded', result));
+      .subscribe((result) => console.log('Succeeded', result));
   }
 }
