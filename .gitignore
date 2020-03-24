@@ -48,3 +48,7 @@ backend/db.sqlite3
 # compiled python
 __pycache__
 *.pyc
+
+# Cypress
+cypress/videos
+cypress/screenshots
