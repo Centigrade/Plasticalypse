@@ -28,7 +28,9 @@
               "frontend/src/assets",
               "frontend/src/manifest.json"
             ],
-            "styles": ["frontend/src/styles.scss"],
+            "styles": [
+              "frontend/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -87,7 +89,9 @@
             "polyfills": "frontend/src/polyfills.ts",
             "tsConfig": "frontend/src/tsconfig.spec.json",
             "karmaConfig": "frontend/src/karma.conf.js",
-            "styles": ["frontend/src/styles.scss"],
+            "styles": [
+              "frontend/src/styles.scss"
+            ],
             "scripts": [],
             "assets": [
               "frontend/src/favicon.ico",
@@ -99,8 +103,37 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["frontend/src/tsconfig.app.json", "frontend/src/tsconfig.spec.json"],
-            "exclude": ["**/node_modules/**"]
+            "tsConfig": [
+              "frontend/src/tsconfig.app.json",
+              "frontend/src/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "cypress-run": {
+          "builder": "@briebug/cypress-schematic:cypress",
+          "options": {
+            "devServerTarget": "plastic-free:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "plastic-free:serve:production"
+            }
+          }
+        },
+        "cypress-open": {
+          "builder": "@briebug/cypress-schematic:cypress",
+          "options": {
+            "devServerTarget": "plastic-free:serve",
+            "watch": true,
+            "headless": false
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "plastic-free:serve:production"
+            }
           }
         }
       }
@@ -126,7 +159,9 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "frontend/e2e/tsconfig.e2e.json",
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         }
       }
