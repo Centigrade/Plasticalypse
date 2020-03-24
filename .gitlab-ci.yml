@@ -17,7 +17,6 @@ cache:
 before_script:
   # Install dependencies if not fetched from cache
   - if [ ! -d "node_modules/" ]; then npm ci; fi
-  - npm run cy:verify
 
 install:dependencies:
   stage: install
@@ -44,6 +43,7 @@ build:production:
 e2e:
   stage: test
   script:
+    - if [ ! npm run cy:verify ]; then npm ci; fi
     - npm run e2e:ci
   artifacts:
     paths:
