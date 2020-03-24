@@ -10,5 +10,8 @@
   ],
   "include": [
     "frontend/src/**/*.d.ts"
+  ],
+  "exclude": [
+    "**/*.stories.ts"
   ]
 }
