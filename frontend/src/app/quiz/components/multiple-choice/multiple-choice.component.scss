@@ -23,6 +23,10 @@ input[type='radio'] {
   display: none;
 }
 
+label {
+  display: block;
+}
+
 .answers {
   width: 285px;
   align-self: center;

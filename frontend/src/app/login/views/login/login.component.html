@@ -3,6 +3,7 @@
   <input
     id="email"
     type="email"
+    data-cy="email"
     #email
     placeholder="valentina.braucher@plastik.no"
     value="frederik"
@@ -10,10 +11,10 @@
 </div>
 <div class="field">
   <label for="password"> 🔑 </label>
-  <input id="password" #password value="frederik" type="password" />
+  <input data-cy="password" id="password" #password value="frederik" type="password" />
 </div>
 
-<pf-submit-button class="login" (click)="login(email.value, password.value)"
+<pf-submit-button data-cy="login-button" class="login" (click)="login(email.value, password.value)"
   >Login</pf-submit-button
 >
 
