@@ -28,9 +28,7 @@
               "frontend/src/assets",
               "frontend/src/manifest.json"
             ],
-            "styles": [
-              "frontend/src/styles.scss"
-            ],
+            "styles": ["frontend/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -89,9 +87,7 @@
             "polyfills": "frontend/src/polyfills.ts",
             "tsConfig": "frontend/src/tsconfig.spec.json",
             "karmaConfig": "frontend/src/karma.conf.js",
-            "styles": [
-              "frontend/src/styles.scss"
-            ],
+            "styles": ["frontend/src/styles.scss"],
             "scripts": [],
             "assets": [
               "frontend/src/favicon.ico",
@@ -103,13 +99,8 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "frontend/src/tsconfig.app.json",
-              "frontend/src/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["frontend/src/tsconfig.app.json", "frontend/src/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -135,67 +126,7 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "e2e/tsconfig.e2e.json",
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    },
-    "playground": {
-      "root": "frontend",
-      "sourceRoot": "frontend/src",
-      "projectType": "application",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:browser",
-          "options": {
-            "aot": true,
-            "outputPath": "dist/playground",
-            "index": "frontend/src/index.html",
-            "main": "frontend/src/main.playground.ts",
-            "polyfills": "frontend/src/polyfills.ts",
-            "tsConfig": "frontend/src/tsconfig.app.json",
-            "assets": [
-              "frontend/src/favicon.ico",
-              "frontend/src/assets"
-            ],
-            "styles": [
-              "frontend/src/styles.scss"
-            ],
-            "scripts": []
-          },
-          "configurations": {
-            "production": {
-              "budgets": [
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "6kb"
-                }
-              ],
-              "fileReplacements": [
-                {
-                  "replace": "frontend/src/environments/environment.ts",
-                  "with": "frontend/src/environments/environment.prod.ts"
-                }
-              ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "extractCss": true,
-              "namedChunks": false,
-              "aot": false,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": false
-            }
-          }
-        },
-        "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "browserTarget": "playground:build",
-            "port": 4201
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
