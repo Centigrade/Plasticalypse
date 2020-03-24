@@ -2,8 +2,6 @@
   "name": "plastic-free",
   "version": "0.0.0",
   "scripts": {
-    "cy:open": "cypress open",
-    "cy:run": "cypress run",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
@@ -14,7 +12,9 @@
     "format": "prettier --write \"frontend/src/**/*.{ts,scss,html}\"",
     "e2e": "ng e2e",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run"
   },
   "private": true,
   "dependencies": {
