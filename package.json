@@ -58,7 +58,6 @@
     "karma-jasmine-html-reporter": "^0.2.2",
     "karma-spec-reporter": "0.0.32",
     "prettier": "^2.0.2",
-    "protractor": "~5.4.0",
     "ts-loader": "6.2.2",
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",

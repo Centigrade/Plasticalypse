@@ -28,9 +28,7 @@
               "frontend/src/assets",
               "frontend/src/manifest.json"
             ],
-            "styles": [
-              "frontend/src/styles.scss"
-            ],
+            "styles": ["frontend/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -89,9 +87,7 @@
             "polyfills": "frontend/src/polyfills.ts",
             "tsConfig": "frontend/src/tsconfig.spec.json",
             "karmaConfig": "frontend/src/karma.conf.js",
-            "styles": [
-              "frontend/src/styles.scss"
-            ],
+            "styles": ["frontend/src/styles.scss"],
             "scripts": [],
             "assets": [
               "frontend/src/favicon.ico",
@@ -103,13 +99,8 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "frontend/src/tsconfig.app.json",
-              "frontend/src/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["frontend/src/tsconfig.app.json", "frontend/src/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**"]
           }
         },
         "cypress-run": {
@@ -134,34 +125,6 @@
             "production": {
               "devServerTarget": "plastic-free:serve:production"
             }
-          }
-        }
-      }
-    },
-    "plastic-free-e2e": {
-      "root": "e2e/",
-      "projectType": "application",
-      "prefix": "",
-      "architect": {
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "plastic-free:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "plastic-free:serve:production"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": "frontend/e2e/tsconfig.e2e.json",
-            "exclude": [
-              "**/node_modules/**"
-            ]
           }
         }
       }
