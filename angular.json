@@ -103,6 +103,19 @@
             "exclude": ["**/node_modules/**"]
           }
         },
+        "e2e": {
+          "builder": "@briebug/cypress-schematic:cypress",
+          "options": {
+            "devServerTarget": "plastic-free:serve",
+            "watch": true,
+            "headless": false
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "plastic-free:serve:production"
+            }
+          }
+        },
         "cypress-run": {
           "builder": "@briebug/cypress-schematic:cypress",
           "options": {
