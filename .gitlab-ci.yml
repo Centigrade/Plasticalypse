@@ -24,6 +24,7 @@ install:dependencies:
     key: ${CI_COMMIT_SHA}
     paths:
       - node_modules/
+      - /root/.cache/Cypress
     # Always push new node_modules to cache
     policy: push
   script:
@@ -43,7 +44,7 @@ build:production:
 e2e:
   stage: test
   script:
-    - if [ ! npm run cy:verify ]; then npm ci; fi
+    - npm run cy:verify
     - npm run e2e:ci
   artifacts:
     paths:
