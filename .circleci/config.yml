@@ -16,12 +16,12 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: dependency-cache-{{ checksum "package-lock.lock" }}
+          key: dependency-cache-{{ checksum "package-lock.json" }}
       - run:
           name: install-dependencies
           command: npm ci
       - save_cache:
-          key: dependency-cache-{{ checksum "package-lock.lock" }}
+          key: dependency-cache-{{ checksum "package-lock.json" }}
           paths:
             - ./node_modules
       - run:
@@ -34,12 +34,12 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: dependency-cache-{{ checksum "package-lock.lock" }}
+          key: dependency-cache-{{ checksum "package-lock.json" }}
       - run:
           name: install-dependencies
           command: npm ci
       - save_cache:
-          key: dependency-cache-{{ checksum "package-lock.lock" }}
+          key: dependency-cache-{{ checksum "package-lock.json" }}
           paths:
             - ./node_modules
       - run:
