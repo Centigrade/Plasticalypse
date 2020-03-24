@@ -49,15 +49,13 @@ jobs:
           name: lint:format
           command: npm run lint:format
 
-  e2e:
-    - cypress/run:
-      start: npm start
-      wait-on: 'http://localhost:4200'
-      store_artifacts: true
-
 workflows:
   build:
     jobs:
       - lint
       - build
       - e2e
+      - cypress/run:
+        start: npm start
+        wait-on: 'http://localhost:4200'
+        store_artifacts: true
