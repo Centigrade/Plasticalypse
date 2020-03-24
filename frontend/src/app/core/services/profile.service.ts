@@ -7,13 +7,11 @@ import { PfHttpService } from './pf-http.service';
 
 @Injectable()
 export class ProfileService {
-  //insert HTTPClient via DependencyInjection in constructor
+  // Insert HTTPClient via DependencyInjection in constructor
   constructor(private http: PfHttpService) {}
 
   /**
    * Updates the backend values by the given parameters.
-   * @param familySize
-   * @param level
    */
   public updateProfile(familySize: number, level: UserLevel) {
     const body = {

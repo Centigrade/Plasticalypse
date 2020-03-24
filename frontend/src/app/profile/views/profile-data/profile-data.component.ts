@@ -12,7 +12,7 @@ import { UserData } from './../../../shared/types/user-data';
   styleUrls: ['./profile-data.component.scss'],
 })
 export class ProfileDataComponent implements OnInit {
-  //Properties
+  // Properties
   public user$: Observable<UserData>;
 
   public editProfile() {
@@ -30,7 +30,7 @@ export class ProfileDataComponent implements OnInit {
     private menuService: MenuService,
   ) {}
 
-  //Methods
+  // Methods
   ngOnInit() {
     this.user$ = this.profileService.getProfileData();
   }
@@ -38,10 +38,13 @@ export class ProfileDataComponent implements OnInit {
   public getUserLevelDescription(userLevel: UserLevel) {
     switch (userLevel) {
       case UserLevel.Beginner:
+        // tslint:disable-next-line: max-line-length
         return 'Du hast großes Potenzial, die Welt zu verbessern. Mit jedem Joghurtbecher aus Glas mit jeder unverpackten Tomate trägst du zur Zukunft des Planeten bei. Du erzeugst etwa 2333 g Plastikverpackungsmüll pro Monat. Wir trauen dir noch viel weniger zu, total positiv gemeint.';
       case UserLevel.Moderate:
+        // tslint:disable-next-line: max-line-length
         return 'Tätätääää! Du kannst stolz auf dich sein, du schreitest auf dem rechten Wege in eine erträgliche Zukunft. Kämpfe verbissen weiter und die Welt wird es dir danken. Du erzeugst etwa 3083 g Plastikverpackungsmüll pro Monat, während der Durchschnitt in Deutschland bei 3100 g liegt. Wir trauen dir noch viel weniger zu, total positiv gemeint.';
       case UserLevel.Hardliner:
+        // tslint:disable-next-line: max-line-length
         return 'Halleluja! Wenn alle so wären wie du, hätte die Welt noch eine echte Chance! Du bist jetzt schon ein holdes Vorbild und man muss sich davor verneigen, dass du nicht müde wirst deinen Plastikmüll noch weiter einzuschränken. Du erzeugst etwa 2333 g Plastikverpackungsmüll pro Monat, während der Durchschnitt in Deutschland bei 3100 g liegt. Wir trauen dir noch viel weniger zu, total positiv gemeint.';
     }
   }

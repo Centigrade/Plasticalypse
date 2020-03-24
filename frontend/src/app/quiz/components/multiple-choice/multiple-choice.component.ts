@@ -25,7 +25,7 @@ export class MultipleChoiceComponent implements OnChanges {
     this.selectedAnswer = undefined;
   }
 
-  //methods
+  // methods
   public confirm() {
     this.answered.emit(this.selectedAnswer.score);
   }

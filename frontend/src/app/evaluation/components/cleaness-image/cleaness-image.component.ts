@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges } from '@angular/core';
 import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
 
 @Component({
@@ -7,13 +7,13 @@ import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
   styleUrls: ['./cleaness-image.component.scss'],
 })
 export class CleanessImageComponent implements OnChanges {
-  @Input() percentage: number = 0;
+  @Input() percentage = 0;
 
   public clippingPath: SafeStyle;
 
   constructor(private sanitizer: DomSanitizer) {}
 
-  ngOnChanges(changes: SimpleChanges) {
+  ngOnChanges() {
     this.clippingPath = this.clipPath(this.percentage);
   }
 

@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./savings.component.scss'],
 })
 export class SavingsComponent {
-  //Property
+  // Property
   public title: string;
 
   @Input() savingAmount: number;

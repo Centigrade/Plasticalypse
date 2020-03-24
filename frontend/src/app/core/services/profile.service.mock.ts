@@ -7,8 +7,6 @@ import { UserLevel } from './../../shared/types/user-level';
 export class ProfileServiceMock {
   /**
    * Updates the backend values by the given parameters.
-   * @param familySize
-   * @param level
    */
   public updateProfile(familySize: number, level: UserLevel) {
     const body = {
