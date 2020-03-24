@@ -1,4 +1,4 @@
-image: centigrade/gitlab-ci-node-angular
+image: centigrade/gitlab-ci-node-angular:10.16
 
 stages:
   - install
