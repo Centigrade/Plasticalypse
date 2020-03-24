@@ -5,6 +5,7 @@
 <div class="answers">
   <div
     class="answer"
+    (click)="selectedAnswer = answer"
     [class.nextSelected]="isNextItemSelected(answer)"
     [class.selected]="selectedAnswer === answer"
     *ngFor="let answer of question.answers; let i = index"

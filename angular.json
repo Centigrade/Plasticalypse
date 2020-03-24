@@ -102,18 +102,23 @@
             "tsConfig": ["frontend/src/tsconfig.app.json", "frontend/src/tsconfig.spec.json"],
             "exclude": ["**/node_modules/**"]
           }
-        }
-      }
-    },
-    "plastic-free-e2e": {
-      "root": "e2e/",
-      "projectType": "application",
-      "prefix": "",
-      "architect": {
+        },
         "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
+          "builder": "@briebug/cypress-schematic:cypress",
           "options": {
-            "protractorConfig": "e2e/protractor.conf.js",
+            "devServerTarget": "plastic-free:serve",
+            "watch": true,
+            "headless": false
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "plastic-free:serve:production"
+            }
+          }
+        },
+        "cypress-run": {
+          "builder": "@briebug/cypress-schematic:cypress",
+          "options": {
             "devServerTarget": "plastic-free:serve"
           },
           "configurations": {
@@ -122,11 +127,17 @@
             }
           }
         },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+        "cypress-open": {
+          "builder": "@briebug/cypress-schematic:cypress",
           "options": {
-            "tsConfig": "frontend/e2e/tsconfig.e2e.json",
-            "exclude": ["**/node_modules/**"]
+            "devServerTarget": "plastic-free:serve",
+            "watch": true,
+            "headless": false
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "plastic-free:serve:production"
+            }
           }
         }
       }

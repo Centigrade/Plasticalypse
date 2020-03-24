@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { environment } from '../../environments/environment';
 import { AuthService } from './services/auth.service';
 import { AuthServiceMock } from './services/auth.service.mock';
 import { EvaluationService } from './services/evaluation.service';
@@ -22,7 +23,7 @@ import { ProfileServiceMock } from './services/profile.service.mock';
     },
     {
       provide: AuthService,
-      useClass: AuthServiceMock,
+      useClass: !environment.production ? AuthServiceMock : AuthService,
     },
     {
       provide: GroceryService,

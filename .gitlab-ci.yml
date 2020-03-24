@@ -3,6 +3,7 @@ image: centigrade/gitlab-ci-node-angular:10.16
 stages:
   - install
   - build
+  - test
   - deploy
 
 # By default try fetching node_module in this pipeline
@@ -10,11 +11,13 @@ cache:
     key: ${CI_COMMIT_SHA}
     paths:
       - node_modules/
+      - /root/.cache/Cypress
     policy: pull
 
 before_script:
   # Install dependencies if not fetched from cache
   - if [ ! -d "node_modules/" ]; then npm ci; fi
+  - if [ ! -d "/root/.cache/Cypress" ]; then npm ci; fi
 
 install:dependencies:
   stage: install
@@ -22,6 +25,7 @@ install:dependencies:
     key: ${CI_COMMIT_SHA}
     paths:
       - node_modules/
+      - /root/.cache/Cypress
     # Always push new node_modules to cache
     policy: push
   script:
@@ -37,6 +41,17 @@ build:production:
     paths:
       - ./dist
     expire_in: '2 hrs'
+
+e2e:
+  stage: test
+  script:
+    - npm run cy:verify
+    - npm run e2e:ci
+  artifacts:
+    paths:
+      - cypress/screenshots
+      - cypress/videos
+    expire_in: '24 hrs'
 
 pages:
   stage: deploy

@@ -1,0 +1,4 @@
+{
+  "extends": "../frontend/tsconfig.json",
+  "include": ["../node_modules/cypress", "*/*.ts", "support/index.js"]
+}
