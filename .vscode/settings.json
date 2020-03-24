@@ -5,6 +5,7 @@
   },
   "prettier.requireConfig": true,
   "versionlens.showVersionLensesAtStartup": false,
+  "typescript.preferences.importModuleSpecifier": "relative",
   "git.ignoreLimitWarning": true,
   "python.linting.pylintEnabled": true
 }
