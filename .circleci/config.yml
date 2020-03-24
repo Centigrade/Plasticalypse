@@ -56,6 +56,6 @@ workflows:
       - build
       # E2E Cypress using the preconfigured orb
       - cypress/run:
-          start: npm start
+          start: npm run start:prod
           wait-on: 'http://localhost:4200'
           store_artifacts: true
