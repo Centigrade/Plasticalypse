@@ -11,6 +11,7 @@ cache:
     key: ${CI_COMMIT_SHA}
     paths:
       - node_modules/
+      - /root/.cache/Cypress
     policy: pull
 
 before_script:
