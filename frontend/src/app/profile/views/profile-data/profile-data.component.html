@@ -1,11 +1,11 @@
-<ng-container *ngIf="user$|async as user">
+<ng-container *ngIf="user$ | async as user">
+  <pf-family-members-count
+    [familyMembersCount]="user.family_size"
+    [familyName]="user.email.split('@')[0]"
+  ></pf-family-members-count>
 
-  <pf-family-members-count [familyMembersCount]="user.family_size"
-                           [familyName]="user.email.split('@')[0]"></pf-family-members-count>
-
-  <pf-expander class="expander"
-               [title]="getUserLevelTitle(user.level)">
-    {{getUserLevelDescription(user.level)}}
+  <pf-expander class="expander" [title]="getUserLevelTitle(user.level)">
+    {{ getUserLevelDescription(user.level) }}
   </pf-expander>
 
   <div class="savings">
@@ -14,9 +14,7 @@
     <div class="unit">Gramm</div>
   </div>
 
-  <button class="start"
-          (click)="start()">loslegen!</button>
+  <button class="start" (click)="start()">loslegen!</button>
 
-  <button class="edit-profile"
-          (click)="editProfile()"></button>
+  <button class="edit-profile" (click)="editProfile()"></button>
 </ng-container>

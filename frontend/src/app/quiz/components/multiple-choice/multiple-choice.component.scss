@@ -19,7 +19,7 @@
   margin: auto 50px 31px 50px;
 }
 
-input[type=radio] {
+input[type='radio'] {
   display: none;
 }
 
@@ -52,7 +52,6 @@ input[type=radio] {
 }
 
 .answer {
-
   // highlight the selected answer lines
   &.selected .line,
   &.selected .circle {
@@ -70,8 +69,8 @@ input[type=radio] {
   }
 
   // if the previous answer is selected, highlight the upper line
-  &.selected+.answer .upper .line,
-  &.selected+.answer .upper .circle {
+  &.selected + .answer .upper .line,
+  &.selected + .answer .upper .circle {
     border-color: $foreground-highlight;
   }
 

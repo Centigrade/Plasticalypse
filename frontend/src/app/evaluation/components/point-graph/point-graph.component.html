@@ -1,19 +1,21 @@
-<div class="swipe-area"
-     (panstart)="onPanStart()"
-     (panmove)="onPanMove($event)"
-     (panend)="onPanEnd()"
-     [ngClass]="{pan: pan}">
+<div
+  class="swipe-area"
+  (panstart)="onPanStart()"
+  (panmove)="onPanMove($event)"
+  (panend)="onPanEnd()"
+  [ngClass]="{ pan: pan }"
+>
   <!-- bar for every single entry in the user's history -->
-  <div *ngFor='let datepoint of shownDatePoints; let index = index'
-       class="
-     datepoint"
-       [style.height]="lineWidth()"
-       [style.width]="calculateHeight(datepoint.amount)"
-       [style.left]="caluclateLeft(index)">
+  <div
+    *ngFor="let datepoint of shownDatePoints; let index = index"
+    class="datepoint"
+    [style.height]="lineWidth()"
+    [style.width]="calculateHeight(datepoint.amount)"
+    [style.left]="caluclateLeft(index)"
+  >
     <div class="datepoint_wrapper">
       <!-- amount for this entry -->
-      <span *ngIf="showLabel()"
-            class="datepoint_amount">{{datepoint.amount}}</span>
+      <span *ngIf="showLabel()" class="datepoint_amount">{{ datepoint.amount }}</span>
     </div>
   </div>
 </div>

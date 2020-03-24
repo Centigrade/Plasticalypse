@@ -38,11 +38,11 @@ export class PointGraphComponent implements OnChanges {
   }
 
   private fitlerDatePoints() {
-    this.shownDatePoints = this.datepoints.filter(datePoint => {
+    this.shownDatePoints = this.datepoints.filter((datePoint) => {
       return datePoint.date >= this.startDate && datePoint.date <= this.endDate;
     });
 
-    const amount = this.shownDatePoints.map(date => date.amount);
+    const amount = this.shownDatePoints.map((date) => date.amount);
 
     if (amount && amount.length > 0) {
       const maxValue = 1000;

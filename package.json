@@ -8,6 +8,8 @@
     "build:prod:ci": "ng build --configuration=production --progress false",
     "test": "ng test",
     "lint": "ng lint",
+    "lint:format": "prettier -l \"frontend/src/**/*.{ts,scss,html}\"",
+    "format": "prettier --write \"frontend/src/**/*.{ts,scss,html}\"",
     "e2e": "ng e2e",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
@@ -50,6 +52,7 @@
     "karma-jasmine": "~1.1.2",
     "karma-jasmine-html-reporter": "^0.2.2",
     "karma-spec-reporter": "0.0.32",
+    "prettier": "^2.0.2",
     "protractor": "~5.4.0",
     "stylelint-config-standard": "^18.2.0",
     "ts-node": "~7.0.0",

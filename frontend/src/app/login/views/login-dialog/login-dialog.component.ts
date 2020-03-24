@@ -17,8 +17,8 @@ export class LoginDialogComponent {
   public login(email: string, password: string) {
     this.userName$ = this.authService.login(email, password).pipe(
       tap(() => (this.isLoggedIn = true)),
-      map(user => user.name),
-      catchError(error => of(`Login Error: ${error}`)),
+      map((user) => user.name),
+      catchError((error) => of(`Login Error: ${error}`)),
     );
   }
 }

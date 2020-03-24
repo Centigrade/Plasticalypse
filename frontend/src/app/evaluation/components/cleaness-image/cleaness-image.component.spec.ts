@@ -11,9 +11,8 @@ describe('CleanessImageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CleanessImageComponent ]
-    })
-    .compileComponents();
+      declarations: [CleanessImageComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

@@ -20,6 +20,8 @@ export class EvaluationViewComponent {
   public endDate: Date = new Date(2019, 0, 31);
 
   constructor(private evaluationService: EvaluationService) {
-    this.evaluationService.getEvaluation().subscribe(evaluation => (this.datepoints = evaluation));
+    this.evaluationService
+      .getEvaluation()
+      .subscribe((evaluation) => (this.datepoints = evaluation));
   }
 }
