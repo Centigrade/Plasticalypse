@@ -17,6 +17,7 @@ cache:
 before_script:
   # Install dependencies if not fetched from cache
   - if [ ! -d "node_modules/" ]; then npm ci; fi
+  - if [ ! -d "/root/.cache/Cypress" ]; then npm ci; fi
 
 install:dependencies:
   stage: install
