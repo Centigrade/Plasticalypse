@@ -8,10 +8,56 @@ orbs:
   # - run Cypress tests
   # - store videos and screenshots as artifacts on CircleCI
   cypress: cypress-io/cypress@1
+
+jobs:
+  build:
+    docker:
+      - circleci/node
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package-lock.lock" }}
+      - run:
+          name: install-dependencies
+          command: npm ci
+      - save_cache:
+          key: dependency-cache-{{ checksum "package-lock.lock" }}
+          paths:
+            - ./node_modules
+      - run:
+          name: build
+          command: npm run build:prod
+
+  lint:
+    docker:
+      - circleci/node
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package-lock.lock" }}
+      - run:
+          name: install-dependencies
+          command: npm ci
+      - save_cache:
+          key: dependency-cache-{{ checksum "package-lock.lock" }}
+          paths:
+            - ./node_modules
+      - run:
+          name: lint
+          command: npm run lint
+      - run:
+          name: lint:format
+          command: npm run lint:format
+
+  e2e:
+    - cypress/run:
+      start: npm start
+      wait-on: 'http://localhost:4200'
+      store_artifacts: true
+
 workflows:
   build:
     jobs:
-      - cypress/run:
-          start: npm start
-          wait-on: 'http://localhost:4200'
-          store_artifacts: true
+      - lint
+      - build
+      - e2e
