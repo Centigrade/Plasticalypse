@@ -1,13 +1,3 @@
-# Plasticalypse App  ##WIP!!##
+# Plasticalypse
 
-App to save plastic in everyday groceries.
-
-## Frontend
-
-
-## Backend
-
-For prototyping we use [STRAPI](https://strapi.io/documentation/3.x.x/getting-started/installation.html) Version 3.0.0-alpha.18
-
-
-
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d25185bc-56fb-4348-8f89-75ccdc64516b/deploy-status)](https://plasticalypse.netlify.com/)
